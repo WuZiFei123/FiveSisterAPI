@@ -14,14 +14,29 @@ namespace FiveSister.Controllers
     public class FiveSister : ControllerBase
     {
         IBLLClothesBrand bll;
-        public FiveSister(IBLLClothesBrand _bll) 
+        IBLLClothesType bLLClothesType;
+        public FiveSister(IBLLClothesBrand _bll,IBLLClothesType _bLLClothesType) 
         {
             bll = _bll;
+            bLLClothesType = _bLLClothesType;
+        }
+
+        /// <summary>
+        /// 获取所有类型
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetClothesTypes")]
+        public List<ClothesType> GetClothesTypes()
+        {
+            var s =  bLLClothesType.GetClothesTypes();
+            return s;
         }
         /// <summary>
         /// 获取所有品牌
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         [RouteAttribute("api/[controller]/GetClothesBrands")]
         public List<ClothesBrand> GetClothesBrands()
         {
@@ -31,6 +46,7 @@ namespace FiveSister.Controllers
         /// 添加品牌
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         [RouteAttribute("api/[controller]/AddClothesBrand")]
         public int AddClothesBrand()
         {

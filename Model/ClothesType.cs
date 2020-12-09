@@ -5,17 +5,21 @@ using System.Text;
 namespace Model
 {
     /// <summary>
-    /// 品牌表
+    /// 类型表
     /// </summary>
    public class ClothesType
     {
         /// <summary>
         /// 主键
         /// </summary>
-        public int ClothesBrandId { get; set; }
+        public int ClothesTypeId { get; set; }
         /// <summary>
-        /// 品牌名称
+        /// 类型名称
         /// </summary>
-        public string ClothesBrandName { get; set; }
+        public string ClothesTypeName { get; set; }
+        /// <summary>
+        /// 类型父Id
+        /// </summary>
+        public int ClothesTypePid { get; set; }
     }
 }
