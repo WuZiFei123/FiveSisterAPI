@@ -15,9 +15,13 @@ namespace FiveSister.Controllers
     public class GoodsInfoController : ControllerBase
     {
         IBLLGoodsInfo bLLGoodsInfo;
-        public GoodsInfoController(IBLLGoodsInfo _bLLGoodsInfo)
+        IBLLActibityInfo bLLActibityInfo;
+        IBLLKillInfo bLLKillInfo;
+        public GoodsInfoController(IBLLGoodsInfo _bLLGoodsInfo, IBLLActibityInfo _bLLActibityInfo,IBLLKillInfo _bLLKillInfo)
         {
             bLLGoodsInfo = _bLLGoodsInfo;
+            bLLActibityInfo = _bLLActibityInfo;
+            bLLKillInfo = _bLLKillInfo;
         }
         /// <summary>
         /// 分页获取获取所有商品
@@ -50,6 +54,37 @@ namespace FiveSister.Controllers
         public int GoodsAdd([FromForm] GoodsInfo g)
         {
             return bLLGoodsInfo.GoodsAdd(g);
+        }
+        /// <summary>
+        /// 查询所有活动
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetActibityInfos")]
+        public List<ActibityInfo> GetActibityInfos()
+        {
+            return bLLActibityInfo.GetActibityInfos();
+        }
+        /// <summary>
+        /// 把已经推送的轮播修改为下架
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/UpdateActibityInfosByIds")]
+        public int UpdateActibityInfosByIds(string ids)
+        {
+            return bLLActibityInfo.UpdateActibityInfosByIds(ids);
+        }
+        /// <summary>
+        /// 查询所有秒杀
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetKillInfos")]
+        public List<KillInfo> GetKillInfos()
+        {
+            return bLLKillInfo.GetKillInfos();
         }
     }
 }

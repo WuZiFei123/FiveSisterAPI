@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,9 +31,11 @@ namespace FiveSister
             services.AddTransient<IBLLClothesType, ClothesTypeBLL>();
             services.AddTransient<IBLLGoodsInfo, GoodsInfoBLL>();
             services.AddTransient<IBLLGoodsCarInfo, GoodsCarInfoBLL>();
+            services.AddTransient<IBLLActibityInfo, ActibityInfoBLL>();
+            services.AddTransient<IBLLKillInfo, KillInfoBLL>();
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
-            //ÅäÖÃ¿çÓò´¦Àí£¬ÔÊÐíËùÓÐÀ´Ô´£º
+            //ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½
             services.AddCors(options =>
             options.AddPolicy("kkk",
             p => p.AllowAnyOrigin())
@@ -47,7 +49,7 @@ namespace FiveSister
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("kkk");//±ØÐëÎ»ÓÚUserMvcÖ®Ç° 
+            app.UseCors("kkk");//ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½UserMvcÖ®Ç° 
             app.UseRouting();
 
             app.UseAuthorization();
