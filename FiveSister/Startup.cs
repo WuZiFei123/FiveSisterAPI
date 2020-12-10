@@ -29,6 +29,8 @@ namespace FiveSister
             services.AddControllers();
             services.AddTransient<IBLLClothesBrand,ClothesBrandBLL>();
             services.AddTransient<IBLLClothesType, ClothesTypeBLL>();
+            services.AddTransient<IBLLGoodsInfo, GoodsInfoBLL>();
+            services.AddTransient<IBLLGoodsCarInfo, GoodsCarInfoBLL>();
             //配置跨域处理，允许所有来源：
             services.AddCors(options =>
             options.AddPolicy("kkk",

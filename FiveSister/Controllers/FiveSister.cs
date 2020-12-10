@@ -27,9 +27,14 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpGet]
         [RouteAttribute("api/[controller]/GetClothesTypes")]
-        public List<ClothesType> GetClothesTypes()
+        public List<ClothesType> GetClothesTypes(int TypeId=0)
         {
             var s =  bLLClothesType.GetClothesTypes();
+            if(TypeId!=0)
+            {
+                s = s.Where(s=>s.ClothesTypeId==TypeId).ToList();
+                return s;
+            }
             return s;
         }
         /// <summary>
