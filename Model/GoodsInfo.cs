@@ -57,5 +57,7 @@ namespace Model
         /// 商品简介
         /// </summary>
         public string GoodsInfoDesc { get; set; }
+
+        public int MyProperty { get; set; }
     }
 }
