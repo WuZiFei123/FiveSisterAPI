@@ -58,5 +58,6 @@ namespace Model
         /// </summary>
         public string GoodsInfoDesc { get; set; }
 
+
     }
 }
