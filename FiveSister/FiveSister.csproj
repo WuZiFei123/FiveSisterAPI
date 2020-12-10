@@ -11,5 +11,12 @@
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AnKeLiController\" />
+    <Folder Include="LiuShaoYangController\" />
+    <Folder Include="ZhangXinLongController\" />
+    <Folder Include="LiuHeCongController\" />
+  </ItemGroup>
+
 
 </Project>
