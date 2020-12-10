@@ -40,5 +40,16 @@ namespace FiveSister.Controllers
         {
             return bLLGoodsInfo.GetGoodsInfoTop();
         }
+        /// <summary>
+        /// 添加商品
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [RouteAttribute("api/[controller]/GoodsAdd")]
+        public int GoodsAdd([FromForm] GoodsInfo g)
+        {
+            return bLLGoodsInfo.GoodsAdd(g);
+        }
     }
 }

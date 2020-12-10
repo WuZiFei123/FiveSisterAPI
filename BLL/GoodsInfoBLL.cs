@@ -31,5 +31,10 @@ namespace BLL
         {
             return dal.GetGoodsInfoTop();
         }
+
+        public int GoodsAdd(GoodsInfo g)
+        {
+            return dal.GoodsAdd(g);
+        }
     }
 }
