@@ -16,10 +16,12 @@ namespace FiveSister.Controllers
     {
         IBLLGoodsInfo bLLGoodsInfo;
         IBLLActibityInfo bLLActibityInfo;
-        public GoodsInfoController(IBLLGoodsInfo _bLLGoodsInfo, IBLLActibityInfo _bLLActibityInfo)
+        IBLLKillInfo bLLKillInfo;
+        public GoodsInfoController(IBLLGoodsInfo _bLLGoodsInfo, IBLLActibityInfo _bLLActibityInfo,IBLLKillInfo _bLLKillInfo)
         {
             bLLGoodsInfo = _bLLGoodsInfo;
             bLLActibityInfo = _bLLActibityInfo;
+            bLLKillInfo = _bLLKillInfo;
         }
         /// <summary>
         /// 分页获取获取所有商品
@@ -62,6 +64,16 @@ namespace FiveSister.Controllers
         public int UpdateActibityInfosByIds(string ids)
         {
             return bLLActibityInfo.UpdateActibityInfosByIds(ids);
+        }
+        /// <summary>
+        /// 查询所有秒杀
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetKillInfos")]
+        public List<KillInfo> GetKillInfos()
+        {
+            return bLLKillInfo.GetKillInfos();
         }
     }
 }
