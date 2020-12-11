@@ -12,5 +12,10 @@ namespace IBLL
         /// </summary>
         /// <returns></returns>
         List<GoodsCarInfo> GetGoodsCarInfos();
+        /// <summary>
+        /// 连接查询所有购物车
+        /// </summary>
+        /// <returns></returns>
+        List<ShopCarAndGoods> GetShopCarAndGoods();
     }
 }
