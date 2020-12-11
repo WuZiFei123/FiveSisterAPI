@@ -29,5 +29,16 @@ namespace FiveSister.Controllers
         {
             return bLLClothesType.GetClothesTypes();
         }
+        /// <summary>
+        /// 联动复选框查询
+        /// </summary>
+        /// <param name="pid"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetClothesType")]
+        public List<ClothesType> GetClothesType(int pid)
+        {
+            return bLLClothesType.GetClothesType(pid);
+        }
     }
 }

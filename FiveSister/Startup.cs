@@ -35,7 +35,7 @@ namespace FiveSister
             services.AddTransient<IBLLKillInfo, KillInfoBLL>();
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
-            //���ÿ����������������Դ��
+            services.AddTransient<IBLLSizeInfo, SizeInfoBLL>();
             services.AddCors(options =>
             options.AddPolicy("kkk",
             p => p.AllowAnyOrigin())
@@ -49,7 +49,7 @@ namespace FiveSister
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("kkk");//����λ��UserMvc֮ǰ 
+            app.UseCors("kkk");
             app.UseRouting();
 
             app.UseAuthorization();

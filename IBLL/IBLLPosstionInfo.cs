@@ -8,5 +8,6 @@ namespace IBLL
     public interface IBLLPosstionInfo
     {
         List<PosstionInfo> GetPosstionInfos(int pid);
+        List<PosstionInfo> GetPosstionInfosName(int pid);
     }
 }

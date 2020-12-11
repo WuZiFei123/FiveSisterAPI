@@ -8,5 +8,6 @@ namespace IBLL
    public interface IBLLClothesType
     {
         List<ClothesType> GetClothesTypes();
+        List<ClothesType> GetClothesType(int pid);
     }
 }
