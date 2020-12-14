@@ -14,7 +14,7 @@ namespace Model
         /// </summary>
         public int HotGoodsInfoId { get; set; }
         /// <summary>
-        /// 商品外键        /// </summary>
+        /// 商品外键
         public int GoodsIdOut { get; set; }
     }
 }

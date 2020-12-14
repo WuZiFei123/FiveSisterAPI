@@ -24,7 +24,7 @@ namespace Model
         /// <summary>
         /// 商品单价
         /// </summary>
-        public string GoodsInfoPrice { get; set; }
+        public int GoodsInfoPrice { get; set; }
         /// <summary>
         /// 商品售出数量
         /// </summary>
