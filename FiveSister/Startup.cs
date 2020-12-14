@@ -35,6 +35,7 @@ namespace FiveSister
             services.AddTransient<IBLLKillInfo, KillInfoBLL>();
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
+            services.AddTransient<IBLLAddressInfo,AddressInfoBLL>();
             //���ÿ����������������Դ��
             services.AddCors(options =>
             options.AddPolicy("kkk",
