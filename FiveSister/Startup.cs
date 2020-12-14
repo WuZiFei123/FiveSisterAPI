@@ -20,10 +20,7 @@ namespace FiveSister
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -35,6 +32,9 @@ namespace FiveSister
             services.AddTransient<IBLLKillInfo, KillInfoBLL>();
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
+            services.AddTransient<IBLLGoodsAddInfo, GoodsAddInfoBLL>();
+            //跨域配置
+            services.AddTransient<IBLLSizeInfo, SizeInfoBLL>();
             services.AddTransient<IBLLAddressInfo,AddressInfoBLL>();
             //���ÿ����������������Դ��
             services.AddCors(options =>
@@ -42,19 +42,15 @@ namespace FiveSister
             p => p.AllowAnyOrigin())
             );
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("kkk");//����λ��UserMvc֮ǰ 
+            app.UseCors("kkk");
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

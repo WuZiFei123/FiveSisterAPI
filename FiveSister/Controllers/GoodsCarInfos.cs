@@ -38,7 +38,8 @@ namespace FiveSister.Controllers
         [RouteAttribute("api/[controller]/GetShopCarAndGoods")]
         public List<ShopCarAndGoods> GetShopCarAndGoods()
         {
-            return bllGoodsCarInfo.GetShopCarAndGoods();
+             var s = bllGoodsCarInfo.GetShopCarAndGoods();
+            return s;
         }
     }
 }

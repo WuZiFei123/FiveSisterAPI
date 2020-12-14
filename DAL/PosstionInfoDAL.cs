@@ -8,13 +8,23 @@ namespace DAL
     public class PosstionInfoDAL
     {
         /// <summary>
-        /// 查询省市区
+        /// 地址三级联动
         /// </summary>
         /// <param name="pid"></param>
         /// <returns></returns>
         public List<PosstionInfo> GetPosstionInfos(int pid)
         {
-            string sql = $"select * from PosstionInfo where PosstionInfoId={pid}";
+            string sql = $"select * from PosstionInfo where Pid={pid}";
+            return DapperHelper.GetList<PosstionInfo>(sql);
+        }
+        /// <summary>
+        /// 获取地址name
+        /// </summary>
+        /// <param name="pid"></param>
+        /// <returns></returns>
+        public List<PosstionInfo> GetPosstionInfosName(int pid)
+        {
+            string sql = $"select * from PosstionInfoId where Pid={pid}";
             return DapperHelper.GetList<PosstionInfo>(sql);
         }
     }
