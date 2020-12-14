@@ -10,7 +10,22 @@ namespace BLL
     public class ClothesTypeBLL : IBLLClothesType
     {
         ClothesTypeDAL dal = new ClothesTypeDAL();
-
+        /// <summary>
+        /// 模糊查询类型
+        /// </summary>
+        /// <returns></returns>
+        public List<ClothesType> GetClothesTypesByMasterId(int Id)
+        {
+            return dal.GetClothesTypesByMasterId(Id);
+        }
+        /// <summary>
+        /// 根据Id查询类型
+        /// </summary>
+        /// <returns></returns>
+        public List<ClothesType> GetClothesTypesById(int Id)
+        {
+            return dal.GetClothesTypesById(Id);
+        }
         /// <summary>
         /// 获取所有类型
         /// </summary>
@@ -28,5 +43,7 @@ namespace BLL
         {
             return dal.GetClothesType(pid);
         }
+
+      
     }
 }

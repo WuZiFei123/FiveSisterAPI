@@ -20,6 +20,17 @@ namespace FiveSister.Controllers
             bLLClothesType = _bLLClothesType;
         }
         /// <summary>
+        /// 根据父Id查询类型
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetClothesTypesById")]
+        public List<ClothesType> GetClothesTypesById(int Id)
+        {
+            var s= bLLClothesType.GetClothesTypesById(Id);
+            return s;
+        }
+        /// <summary>
         /// 查询所有类型
         /// </summary>
         /// <returns></returns>
@@ -29,6 +40,18 @@ namespace FiveSister.Controllers
         {
             return bLLClothesType.GetClothesTypes();
         }
+        /// <summary>
+        /// 根据主键查询类型
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetClothesTypesByMasterId")]
+        public ClothesType GetClothesTypesByMasterId(int TypeId)
+        {
+            var s = bLLClothesType.GetClothesTypesByMasterId(TypeId);
+            return s[0];
+        }
+
         /// <summary>
         /// 联动复选框查询
         /// </summary>

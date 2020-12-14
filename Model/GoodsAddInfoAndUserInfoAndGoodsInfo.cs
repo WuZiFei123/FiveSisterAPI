@@ -72,5 +72,9 @@ namespace Model
         /// 商品简介
         /// </summary>
         public string GoodsInfoDesc { get; set; }
+        /// <summary>
+        /// 商品级别
+        /// </summary>
+        public int GoodsJb { get; set; }
     }
 }
