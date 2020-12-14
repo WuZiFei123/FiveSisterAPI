@@ -26,7 +26,7 @@ namespace FiveSister.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [RouteAttribute("api/[controller]/GetClothesTypes")]
+        [RouteAttribute("api/[controller]/GetClothesTypes")]    
         public List<ClothesType> GetClothesTypes(int TypeId=0)
         {
             var s =  bLLClothesType.GetClothesTypes();
@@ -43,9 +43,9 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpGet]
         [RouteAttribute("api/[controller]/GetClothesBrands")]
-        public List<ClothesBrand> GetClothesBrands()
+        public List<ClothesBrand> GetClothesBrands(int Id)
         {
-            return bll.GetClothesBrands();
+            return bll.GetClothesBrands(Id);
         }
         /// <summary>
         /// 添加品牌

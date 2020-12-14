@@ -8,5 +8,6 @@ namespace Model
     {
         public List<GoodsInfo> GoodsInfos { get; set; }
         public int Count { get; set; }
+        public int Con { get; set; }
     }
 }
