@@ -17,5 +17,23 @@ namespace IBLL
         /// </summary>
         /// <returns></returns>
         List<ShopCarAndGoods> GetShopCarAndGoods();
+        /// <summary>
+        /// 删除购物车数据
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        int DeleteCars(string ids);
+        /// <summary>
+        /// 修改数量加一
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        int UpdateAndGo(int id);
+        /// <summary>
+        /// 修改数量减一
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        int UpdateAndBack(int id);
     }
 }

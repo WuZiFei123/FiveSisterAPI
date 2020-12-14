@@ -11,6 +11,16 @@ namespace BLL
     {
         GoodsCarInfoDAL dal = new GoodsCarInfoDAL();
         /// <summary>
+        /// 删除购物车数据
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public int DeleteCars(string ids)
+        {
+            return dal.DeleteCars(ids);
+        }
+
+        /// <summary>
         /// 查询所有购物车
         /// </summary>
         /// <returns></returns>
@@ -25,6 +35,25 @@ namespace BLL
         public List<ShopCarAndGoods> GetShopCarAndGoods()
         {
             return dal.GetShopCarAndGoods();
+        }
+        /// <summary>
+        /// 实现数量减一
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int UpdateAndBack(int id)
+        {
+            return dal.UpdateAndBack(id);
+        }
+
+        /// <summary>
+        /// 修改数量加一
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int UpdateAndGo(int id)
+        {
+            return dal.UpdateAndGo(id);
         }
     }
 }
