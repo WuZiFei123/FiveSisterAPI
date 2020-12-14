@@ -29,6 +29,7 @@ namespace FiveSister.Controllers
         {
             return bllGoodsCarInfo.GetGoodsCarInfos();
         }
+        
         /// <summary>
         /// 联查购物车数据
         /// </summary>
@@ -37,7 +38,8 @@ namespace FiveSister.Controllers
         [RouteAttribute("api/[controller]/GetShopCarAndGoods")]
         public List<ShopCarAndGoods> GetShopCarAndGoods()
         {
-            return bllGoodsCarInfo.GetShopCarAndGoods();
+             var s = bllGoodsCarInfo.GetShopCarAndGoods();
+            return s;
         }
         [HttpPost]
         [RouteAttribute("api/[controller]/DeleteCars")]

@@ -5,20 +5,22 @@ using System.Text;
 namespace Model
 {
     /// <summary>
-    /// 商品收藏表
+    /// 用户优惠券表
     /// </summary>
-   public class GoodsAddInfo
+   public class DisCountAndUser
     {
         /// <summary>
         /// 主键
         /// </summary>
-        public int GoodsAddInfoId { get; set; }
-        /// <summary>
-        /// 商品外键
-        public int GoodsInfoIdOut { get; set; }
+        public int DisCountAndUserId { get; set; }
         /// <summary>
         /// 用户外键
         /// </summary>
-        public int UserInfoIdOut { get; set; }
+        public int UserIdOut { get; set; }
+        /// <summary>
+        /// 优惠券外键
+        /// </summary>
+        public int DisCountId { get; set; }
+
     }
 }

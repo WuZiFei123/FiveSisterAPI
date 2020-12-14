@@ -9,7 +9,7 @@ namespace DAL
 {
     public class DapperHelper
     {
-        static IDbConnection conn = new SqlConnection("Data Source=DESKTOP-337N7SE\\MSSQLSERVERS;Initial Catalog=FiveSister;Integrated Security=True");
+        static IDbConnection conn = new SqlConnection("Data Source=.;Initial Catalog=FiveSister;Integrated Security=True");
 
         /// <summary>
         /// 查询集合

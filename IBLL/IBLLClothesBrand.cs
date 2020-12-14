@@ -7,10 +7,10 @@ namespace IBLL
     public interface IBLLClothesBrand
     {
         /// <summary>
-        /// 获取所有品牌
+        /// 根据Id获取品牌
         /// </summary>
         /// <returns></returns>
-        List<ClothesBrand> GetClothesBrands();
+        List<ClothesBrand> GetClothesBrands(int Id);
         /// <summary>
         /// 添加品牌
         /// </summary>

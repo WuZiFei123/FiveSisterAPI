@@ -15,7 +15,7 @@ namespace DAL
     public class DBHelper
     {
         //连接数据库
-        static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-337N7SE\\MSSQLSERVERS;Initial Catalog=FiveSister;Integrated Security=True");
+        static SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=FiveSister;Integrated Security=True");
         /// <summary>
         /// 商品分页显示
         /// </summary>

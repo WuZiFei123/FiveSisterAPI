@@ -5,16 +5,17 @@ using System.Text;
 namespace Model
 {
     /// <summary>
-    /// 热卖表
+    /// 尺码表
     /// </summary>
-    public class HotGoodsInfo
+    public class SizeInfo
     {
         /// <summary>
-        /// 主键
+        /// 尺码主键
         /// </summary>
-        public int HotGoodsInfoId { get; set; }
+        public int SizrId { get; set; }
         /// <summary>
-        /// 商品外键
-        public int GoodsIdOut { get; set; }
+        /// 尺码名称
+        /// </summary>
+        public string SizeName { get; set; }
     }
 }
