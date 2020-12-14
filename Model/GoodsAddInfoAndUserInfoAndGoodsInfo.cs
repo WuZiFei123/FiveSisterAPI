@@ -4,15 +4,30 @@ using System.Text;
 
 namespace Model
 {
-    /// <summary>
-    /// 商品表
-    /// </summary>
-   public class GoodsInfo
+   public class GoodsAddInfoAndUserInfoAndGoodsInfo
     {
         /// <summary>
         /// 主键
         /// </summary>
+        public int GoodsAddInfoId { get; set; }
+        /// <summary>
+        /// 商品外键
+        public int GoodsInfoIdOut { get; set; }
+        /// <summary>
+        /// 用户外键
+        /// </summary>
+        public int UserInfoIdOut { get; set; }
+
+        /// <summary>
+        /// 主键
+        /// </summary>
+        public int UserInfoId { get; set; }
+
+        /// <summary>
+        /// 主键
+        /// </summary>
         public int GoodsInfoId { get; set; }
+
         /// <summary>
         /// 商品名称
         /// </summary>
@@ -24,7 +39,7 @@ namespace Model
         /// <summary>
         /// 商品单价
         /// </summary>
-        public int GoodsInfoPrice { get; set; }
+        public string GoodsInfoPrice { get; set; }
         /// <summary>
         /// 商品售出数量
         /// </summary>
@@ -57,10 +72,6 @@ namespace Model
         /// 商品简介
         /// </summary>
         public string GoodsInfoDesc { get; set; }
-        /// <summary>
-        /// 商品品牌
-        /// </summary>
-        public string GoodsBrand { get; set; }
         /// <summary>
         /// 商品级别
         /// </summary>

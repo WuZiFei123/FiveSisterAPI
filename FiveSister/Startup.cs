@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,10 +20,7 @@ namespace FiveSister
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -31,27 +28,32 @@ namespace FiveSister
             services.AddTransient<IBLLClothesType, ClothesTypeBLL>();
             services.AddTransient<IBLLGoodsInfo, GoodsInfoBLL>();
             services.AddTransient<IBLLGoodsCarInfo, GoodsCarInfoBLL>();
+            services.AddTransient<IBLLActibityInfo, ActibityInfoBLL>();
+            services.AddTransient<IBLLKillInfo, KillInfoBLL>();
+            services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
+            services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
+            services.AddTransient<IBLLGoodsAddInfo, GoodsAddInfoBLL>();
+            //è·¨åŸŸé…ç½®
+            services.AddTransient<IBLLSizeInfo, SizeInfoBLL>();
+            services.AddTransient<IBLLAddressInfo,AddressInfoBLL>();
+            //ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½
             services.AddTransient<IBLLUserInfo, GoodsUserInfoBLL>();
             
-            //ÅäÖÃ¿çÓò´¦Àí£¬ÔÊĞíËùÓĞÀ´Ô´£º
+            //é…ç½®è·¨åŸŸå¤„ç†ï¼Œå…è®¸æ‰€æœ‰æ¥æºï¼š
             services.AddCors(options =>
             options.AddPolicy("kkk",
             p => p.AllowAnyOrigin())
             );
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("kkk");//±ØĞëÎ»ÓÚUserMvcÖ®Ç° 
+            app.UseCors("kkk");
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

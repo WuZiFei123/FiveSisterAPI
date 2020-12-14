@@ -45,5 +45,15 @@ namespace DAL
             string sql = $"select top 4 * from GoodsInfo order by  GoodsInfoCount desc";
             return DapperHelper.GetList<GoodsInfo>(sql);
         }
+        /// <summary>
+        /// 添加商品
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns></returns>
+        public int GoodsAdd(GoodsInfo g)
+        {
+            string sql = $"insert into GoodsInfo values('{g.GoodsInfoName}','{g.GoodsInfoImage}','{g.GoodsInfoPrice}','{g.GoodsInfoCount}','{g.GoodsInfoState}','{g.GoodsInfoPlace}','{g.GoodsInfoColor}','{g.GoodsInfoSize}','{g.ShopIdOut}','{g.GoodsTypes}','{g.GoodsInfoDesc}')";
+            return DapperHelper.Cud(sql);
+        }
     }
 }

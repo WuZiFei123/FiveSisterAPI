@@ -5,20 +5,25 @@ using System.Text;
 namespace Model
 {
     /// <summary>
-    /// 商品收藏表
+    /// 活动表
     /// </summary>
-   public class GoodsAddInfo
+   public class ActibityInfo
     {
         /// <summary>
         /// 主键
         /// </summary>
-        public int GoodsAddInfoId { get; set; }
+        public int ActibityInfoId { get; set; }
         /// <summary>
         /// 商品外键
+        /// </summary>
         public int GoodsInfoIdOut { get; set; }
         /// <summary>
-        /// 用户外键
+        /// 活动图片
         /// </summary>
-        public int UserInfoIdOut { get; set; }
+        public string ActibityInfoImg { get; set; }
+        /// <summary>
+        /// 是否开启活动
+        /// </summary>
+        public int ActibityInfoState { get; set; }
     }
 }

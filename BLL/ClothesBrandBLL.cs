@@ -22,9 +22,9 @@ namespace BLL
         /// 获取所有品牌
         /// </summary>
         /// <returns></returns>
-        public List<ClothesBrand> GetClothesBrands()
+        public List<ClothesBrand> GetClothesBrands(int Id)
         {
-            return dal.GetClothesBrands();
+            return dal.GetClothesBrands(Id);
         }
     }
 }

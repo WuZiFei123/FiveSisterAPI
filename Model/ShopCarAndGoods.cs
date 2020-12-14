@@ -5,12 +5,28 @@ using System.Text;
 namespace Model
 {
     /// <summary>
-    /// 商品表
+    /// 购物车  商品  用户
     /// </summary>
-   public class GoodsInfo
+    public class ShopCarAndGoods
     {
         /// <summary>
-        /// 主键
+        /// 购物车主键
+        /// </summary>
+        public int GoodsCarInfoId { get; set; }
+        /// <summary>
+        /// 商品外键
+        /// </summary>
+        public int GoodsInfoIdOut { get; set; }
+        /// <summary>
+        /// 用户外键
+        /// </summary>
+        public int UserInfoIdOut { get; set; }
+        /// <summary>
+        /// 商品数量
+        /// </summary>
+        public int GoodsNumber { get; set; }
+        /// <summary>
+        /// 商品主键
         /// </summary>
         public int GoodsInfoId { get; set; }
         /// <summary>
@@ -24,7 +40,7 @@ namespace Model
         /// <summary>
         /// 商品单价
         /// </summary>
-        public int GoodsInfoPrice { get; set; }
+        public string GoodsInfoPrice { get; set; }
         /// <summary>
         /// 商品售出数量
         /// </summary>
@@ -58,12 +74,40 @@ namespace Model
         /// </summary>
         public string GoodsInfoDesc { get; set; }
         /// <summary>
-        /// 商品品牌
+        /// 用户主键
         /// </summary>
-        public string GoodsBrand { get; set; }
+        public int UserInfoId { get; set; }
         /// <summary>
-        /// 商品级别
+        /// 用户名
         /// </summary>
-        public int GoodsJb { get; set; }
+        public string UserInfoName { get; set; }
+        /// <summary>
+        /// 密码
+        /// </summary>
+        public string UserInfoPass { get; set; }
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public string UserInfoSex { get; set; }
+        /// <summary>
+        /// 密保
+        /// </summary>
+        public string UserInfoLetter { get; set; }
+        /// <summary>
+        /// 收货地址
+        /// </summary>
+        public string UserInfoTake { get; set; }
+        /// <summary>
+        /// 手机号
+        /// </summary>
+        public string UserInfoPhone { get; set; }
+        /// <summary>
+        /// 邮箱
+        /// </summary>
+        public string UserInfoEmil { get; set; }
+        /// <summary>
+        /// 头像
+        /// </summary>
+        public string UserInfoHead { get; set; }
     }
 }

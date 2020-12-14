@@ -14,8 +14,17 @@ namespace DAL
         /// <returns></returns>
         public List<GoodsCarInfo> GetGoodsCarInfos()
         {
-            string sql = $"select * from GoodsCarInfo";
+            string sql = $"select * from GoodsInfo";
             return DapperHelper.GetList<GoodsCarInfo>(sql);
+        }
+        /// <summary>
+        /// 联查所有购物车
+        /// </summary>
+        /// <returns></returns>
+        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        {
+            string sql = $"select * from GoodsInfo join GoodsCarInfo on GoodsInfo.GoodsInfoId=GoodsCarInfo.GoodsCarInfoId join UserInfo on GoodsCarInfo.UserInfoIdOut=UserInfo.UserInfoId";
+            return DapperHelper.GetList<ShopCarAndGoods>(sql);
         }
     }
 }

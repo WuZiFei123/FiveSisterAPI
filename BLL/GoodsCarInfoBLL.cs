@@ -18,5 +18,13 @@ namespace BLL
         {
             return dal.GetGoodsCarInfos();
         }
+        /// <summary>
+        /// 联查所有购物车
+        /// </summary>
+        /// <returns></returns>
+        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        {
+            return dal.GetShopCarAndGoods();
+        }
     }
 }

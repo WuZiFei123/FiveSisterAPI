@@ -11,9 +11,13 @@ namespace DAL
         /// 获取所有品牌
         /// </summary>
         /// <returns></returns>
-        public List<ClothesBrand> GetClothesBrands()
+        public List<ClothesBrand> GetClothesBrands(int Id)
         {
-            string sql = "select * from ClothesBrand";
+            string sql = "select * from ClothesBrand where 1=1";
+            if(Id!=0)
+            {
+                sql += $" and ClothesBrandId='{Id}'";
+            }
             return DapperHelper.GetList<ClothesBrand>(sql);
         }
         /// <summary>

@@ -14,9 +14,10 @@ namespace FiveSister.Controllers
     public class GoodsCarInfos : ControllerBase
     {
         IBLLGoodsCarInfo bllGoodsCarInfo;
+        
         public GoodsCarInfos(IBLLGoodsCarInfo _bllGoodsCarInfo)
         {
-            bllGoodsCarInfo = _bllGoodsCarInfo;
+            bllGoodsCarInfo = _bllGoodsCarInfo;  
         }
         /// <summary>
         /// 查询所有购物车
@@ -27,6 +28,18 @@ namespace FiveSister.Controllers
         public List<GoodsCarInfo> GetGoodsCarInfos()
         {
             return bllGoodsCarInfo.GetGoodsCarInfos();
-        } 
+        }
+        
+        /// <summary>
+        /// 联查所有购物车
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetShopCarAndGoods")]
+        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        {
+             var s = bllGoodsCarInfo.GetShopCarAndGoods();
+            return s;
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace IBLL
     {
         GoodsInfo_PageList GetGoodsInfosPage(int PageIndex,int PageSize,string Name,string Brand,string Types);
         List<GoodsInfo> GetGoodsInfoTop();
+        int GoodsAdd(GoodsInfo g);
     }
 }

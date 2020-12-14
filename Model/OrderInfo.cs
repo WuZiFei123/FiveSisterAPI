@@ -33,5 +33,13 @@ namespace Model
         /// 订单状态
         /// </summary>
         public int OrderInfoState { get; set; }
+        /// <summary>
+        /// 商品颜色
+        /// </summary>
+        public string GoodsColor { get; set; }
+        /// <summary>
+        /// 商品尺码
+        /// </summary>
+        public string GoodsSize { get; set; }
     }
 }
