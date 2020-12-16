@@ -10,7 +10,6 @@ using Model;
 
 namespace FiveSister.Controllers
 {
-         
     [ApiController]
     public class GoodsInfoController : ControllerBase
     {
