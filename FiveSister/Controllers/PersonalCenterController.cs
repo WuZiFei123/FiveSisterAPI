@@ -26,7 +26,8 @@ namespace FiveSister.Controllers
         [RouteAttribute("api/[controller]/GetAddressInfos")]
         public List<AddressInfo> GetAddressInfos(int userInfoId=0)
         {
-            return ibll.GetAddressInfos(userInfoId);
+            var s =  ibll.GetAddressInfos(userInfoId);
+            return s;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace FiveSister.Controllers
         {
             return ibll.ModifyDefaultAddressInfo(addressInfoId);
         }
+
         [HttpGet]
         [RouteAttribute("api/[controller]/DeleteAddressInfo")]
         public int DeleteAddressInfo(int addressInfoId)

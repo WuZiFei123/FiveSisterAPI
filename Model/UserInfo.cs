@@ -46,5 +46,9 @@ namespace Model
         /// 头像
         /// </summary>
         public string UserInfoHead { get; set; }
+        /// <summary>
+        /// 用户金钱
+        /// </summary>
+        public int UserInfoMoney { get; set; }
     }
 }
