@@ -9,13 +9,24 @@ namespace BLL
    public class DisCountInfoBLL:IBLLDisCountInfo
     {
         DisCountInfoDAL dal = new DisCountInfoDAL();
+
+        /// <summary>
+        /// 用户获取优惠券
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public int AddDidAndUser(DisCountAndUser d)
+        {
+            return dal.AddDidAndUser(d);
+        }
+
         /// <summary>
         /// 获取所有优惠券
         /// </summary>
         /// <returns></returns>
-        public List<DisCountInfo> GetDisCountInfos()
+        public DisCountInfo GetDisCountInfos(int ss)
         {
-            return dal.GetDisCountInfos();
+            return dal.GetDisCountInfos(ss);
         }
 
     }

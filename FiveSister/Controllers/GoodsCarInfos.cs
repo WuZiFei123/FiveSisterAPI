@@ -36,9 +36,9 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpGet]
         [RouteAttribute("api/[controller]/GetShopCarAndGoods")]
-        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        public List<GoodsCarInfo> GetShopCarAndGoods(int UserId)
         {
-             var s = bllGoodsCarInfo.GetShopCarAndGoods();
+             var s = bllGoodsCarInfo.GetShopCarAndGoods(UserId);
             return s;
         }
         [HttpPost]

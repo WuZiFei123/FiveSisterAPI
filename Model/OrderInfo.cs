@@ -56,5 +56,7 @@ namespace Model
         /// 商品主键
         /// </summary>
         public int GoodsLookId { get; set; }
+        public int GoodsInfoId { get; set; }
+        
     }
 }

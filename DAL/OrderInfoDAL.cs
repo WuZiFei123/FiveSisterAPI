@@ -14,7 +14,7 @@ namespace DAL
         /// <returns></returns>
         public List<OrderInfo> GetOrderInfos(int UserId,int State)
         {
-            string sql = $"select e.*,b.GoodsLookId,b.GoodsImg,c.GoodsInfoDesc,b.GoodsColor,b.GoodsSize,a.OrderInfoSumPrice,a.OrderInfoState,a.OrderInfoId from OrderInfo a join GoodsLook b on a.GoodsLookIdOut = b.GoodsLookId join GoodsInfo c on b.GoodsIdOut = c.GoodsInfoId join UserInfo e on a.UserInfoIdOut = e.UserInfoId where e.UserInfoId ={UserId} and a.OrderInfoState = {State} ";
+            string sql = $"select e.*,b.GoodsLookId,c.GoodsInfoId,b.GoodsImg,c.GoodsInfoDesc,b.GoodsColor,b.GoodsSize,a.OrderInfoSumPrice,a.OrderInfoState,a.OrderInfoId from OrderInfo a join GoodsLook b on a.GoodsLookIdOut = b.GoodsLookId join GoodsInfo c on b.GoodsIdOut = c.GoodsInfoId join UserInfo e on a.UserInfoIdOut = e.UserInfoId where e.UserInfoId ={UserId} and a.OrderInfoState = {State} ";
             return DapperHelper.GetList<OrderInfo>(sql);
         }
         /// <summary>

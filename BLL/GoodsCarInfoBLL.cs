@@ -32,9 +32,9 @@ namespace BLL
         /// 联查所有购物车
         /// </summary>
         /// <returns></returns>
-        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        public List<GoodsCarInfo> GetShopCarAndGoods(int UserId)
         {
-            return dal.GetShopCarAndGoods();
+            return dal.GetShopCarAndGoods(UserId);
         }
         /// <summary>
         /// 实现数量减一

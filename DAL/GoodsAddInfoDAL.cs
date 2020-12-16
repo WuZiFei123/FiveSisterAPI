@@ -27,5 +27,15 @@ namespace DAL
             string sql = $"delete from GoodsAddInfo where GoodsAddInfoId ={ClectId}";
             return DapperHelper.Cud(sql);
         }
+        /// <summary>
+        /// 添加收藏
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns></returns>
+        public int AddGoodsClect(GoodsAddInfo g)
+        {
+            string sql = $"insert into GoodsAddInfo values({g.GoodsInfoIdOut},{g.UserInfoIdOut})";
+            return DapperHelper.Cud(sql);
+        }
     }
 }

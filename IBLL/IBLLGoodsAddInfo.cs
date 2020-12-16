@@ -19,5 +19,6 @@ namespace IBLL
         /// <param name="ClectId"></param>
         /// <returns></returns>
         int UpdateGoodsClect(int ClectId);
+        int AddGoodsClect(GoodsAddInfo g);
     }
 }

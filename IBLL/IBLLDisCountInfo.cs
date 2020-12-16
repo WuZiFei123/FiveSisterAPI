@@ -9,9 +9,10 @@ namespace IBLL
    public interface IBLLDisCountInfo
     {
         /// <summary>
-        /// 获取所有优惠券
+        /// 获取优惠券
         /// </summary>
         /// <returns></returns>
-        List<DisCountInfo> GetDisCountInfos();
+        DisCountInfo GetDisCountInfos(int ss);
+        int AddDidAndUser(DisCountAndUser d);
     }
 }

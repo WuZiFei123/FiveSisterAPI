@@ -49,24 +49,16 @@ namespace DAL
                 tran = conn.BeginTransaction();//事务开始
                 var red = DapperHelper.GetList<UserInfo>($"select * from UserInfo  where UserInfoId={UserId}");
                 var UserMoney = red[0].UserInfoMoney;
-                if(UserMoney>=Price)
-                {
                     SqlCommand comm2 = new SqlCommand($"update UserInfo set UserInfoMoney = UserInfoMoney-{Price} where UserInfoId ={UserId}");
                     comm2.Connection = conn;
                     comm2.Transaction = tran;
                     comm2.ExecuteNonQuery();
-
                     SqlCommand comm = new SqlCommand($"update UserInfo set UserInfoMoney = UserInfoMoney+{Price} where UserInfoId ={ShopUserId}");
                     comm.Connection = conn;
                     comm.Transaction = tran;
                     comm.ExecuteNonQuery();
                     tran.Commit();//事务提交
                     return 1;
-                }
-                else
-                {
-                    return 0;
-                }
             }
         }
     }
