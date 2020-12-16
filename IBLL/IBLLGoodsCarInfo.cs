@@ -35,5 +35,11 @@ namespace IBLL
         /// <param name="id"></param>
         /// <returns></returns>
         int UpdateAndBack(int id);
+        /// <summary>
+        /// 添加购物车商品
+        /// </summary>
+        /// <param name="goodsCar"></param>
+        /// <returns></returns>
+        int AddGoodsCarInfos(GoodsCarInfo goodsCar);
     }
 }

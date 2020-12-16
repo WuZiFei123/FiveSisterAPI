@@ -20,5 +20,11 @@ namespace IBLL
         /// <param name="OrderId"></param>
         /// <returns></returns>
         int UpdateOrderInfoBuy(int OrderId, int State);
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        int AddOrderInfo(OrderInfo order);
     }
 }

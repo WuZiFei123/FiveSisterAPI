@@ -56,5 +56,14 @@ namespace DAL
             string sql = $"update GoodsCarInfo set GoodsNumber=GoodsNumber-1 where GoodsCarInfo.GoodsCarInfoId={id}";
             return DapperHelper.Cud(sql);
         }
+        /// <summary>
+        /// 商品添加购物车
+        /// </summary>
+        /// <returns></returns>
+        public int AddGoodsCarInfos(GoodsCarInfo goodsCar)
+        {
+            string sql = $"insert into GoodsCarInfo values({goodsCar.GoodsInfoIdOut},{goodsCar.UserInfoIdOut},{goodsCar.GoodsNumber})";
+            return DapperHelper.Cud(sql);
+        }
     }
 }

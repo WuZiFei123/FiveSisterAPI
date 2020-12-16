@@ -59,5 +59,17 @@ namespace FiveSister.Controllers
         {
             return bllGoodsCarInfo.UpdateAndBack(id);
         }
+        /// <summary>
+        /// 购物车添加商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [RouteAttribute("api/[controller]/AddGoodsCarInfos")]
+        public int AddGoodsCarInfos([FromForm] GoodsCarInfo goodsCar)
+        {
+           return bllGoodsCarInfo.AddGoodsCarInfos(goodsCar);
+            
+        }
     }
 }
