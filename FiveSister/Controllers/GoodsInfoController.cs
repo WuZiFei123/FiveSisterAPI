@@ -86,5 +86,52 @@ namespace FiveSister.Controllers
         {
             return bLLKillInfo.GetKillInfos();
         }
+        /// <summary>
+        /// 查询商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsInfos")]
+        public List<GoodsInfo> GetGoodsInfos(int id=0)
+        {
+            return bLLGoodsInfo.GetGoodsInfos(id);
+        }
+        /// <summary>
+        /// 查询商品详情颜色
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsLooksColor")]
+        public List<GoodsLook> GetGoodsLooksColor(int id)
+        {
+            return bLLGoodsInfo.GetGoodsLooksColor(id);
+        }
+        /// <summary>
+        /// 查询商品详情尺码
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsLooksSize")]
+        public List<GoodsLook> GetGoodsLooksSize(int id)
+        {
+            return bLLGoodsInfo.GetGoodsLooksSize(id);
+        }
+        /// <summary>
+        /// 查询商品库存详情
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsLooksKC")]
+        public List<GoodsLook> GetGoodsLooksKC(int id, string color, string size)
+        {
+            return bLLGoodsInfo.GetGoodsLooksKC(id,color,size);
+        }
+        
+
+
     }
 }
