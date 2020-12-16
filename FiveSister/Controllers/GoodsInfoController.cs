@@ -10,7 +10,6 @@ using Model;
 
 namespace FiveSister.Controllers
 {
-
     [ApiController]
     public class GoodsInfoController : ControllerBase
     {
@@ -29,9 +28,26 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpGet]
         [RouteAttribute("api/[controller]/GetGoodsInfosPage")]
-        public GoodsInfo_PageList GetGoodsInfosPage(int PageIndex=1, int PageSize=1, string Name="", string Brand="", string Types="")
+        public GoodsInfo_PageList GetGoodsInfosPage(int PageIndex=1, int PageSize=10, string Name="", string Brand="", string Types="",int Orderby =0,int Price =0)
         {
             var s = bLLGoodsInfo.GetGoodsInfosPage(PageIndex,PageSize,Name,Brand,Types);
+            if(Orderby==1)
+            {
+                s.GoodsInfos = s.GoodsInfos.OrderBy(g => g.GoodsInfoCount).ToList();
+            }
+            if (Orderby == 2)
+            {
+                s.GoodsInfos = s.GoodsInfos.OrderByDescending(g => g.GoodsInfoCount).ToList();
+            }
+            if (Price == 1)
+            {
+                s.GoodsInfos = s.GoodsInfos.OrderBy(g => g.GoodsInfoPrice).ToList();
+            }
+            if (Price == 2)
+            {
+                s.GoodsInfos = s.GoodsInfos.OrderByDescending(g => g.GoodsInfoPrice).ToList();
+            }
+            s.Con = s.GoodsInfos.Count;
             return s;
         }
         /// <summary>

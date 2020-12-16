@@ -7,13 +7,16 @@ namespace Model
     /// </summary>
     public class UserInfo
     {
+
         /// <summary>
         /// 主键
         /// </summary>
         public int UserInfoId { get; set; }
+
         /// <summary>
         /// 用户名
         /// </summary>
+       
         public string UserInfoName { get; set; }
         /// <summary>
         /// 密码
@@ -43,5 +46,9 @@ namespace Model
         /// 头像
         /// </summary>
         public string UserInfoHead { get; set; }
+        /// <summary>
+        /// 用户金钱
+        /// </summary>
+        public int UserInfoMoney { get; set; }
     }
 }

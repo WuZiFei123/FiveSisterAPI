@@ -32,9 +32,12 @@ namespace FiveSister
             services.AddTransient<IBLLKillInfo, KillInfoBLL>();
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
+            services.AddTransient<IBLLUserInfo, GoodsUserInfoBLL>();
             services.AddTransient<IBLLGoodsAddInfo, GoodsAddInfoBLL>();
-            //跨域配置
-            services.AddTransient<IBLLSizeInfo, SizeInfoBLL>();
+            services.AddTransient<IBLLAddressInfo, AddressInfoBLL>();
+            services.AddTransient<IBLLOrderInfo, OrderInfoBLL>();
+            services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
+            //配置跨域处理，允许所有来源：
             services.AddCors(options =>
             options.AddPolicy("kkk",
             p => p.AllowAnyOrigin())
