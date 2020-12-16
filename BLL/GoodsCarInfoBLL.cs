@@ -37,6 +37,16 @@ namespace BLL
             return dal.GetShopCarAndGoods();
         }
         /// <summary>
+        /// 购物车添加商品
+        /// </summary>
+        /// <param name="goodsCar"></param>
+        /// <returns></returns>
+        public int AddGoodsCarInfos(GoodsCarInfo goodsCar)
+        {
+            return dal.AddGoodsCarInfos(goodsCar);
+        }
+
+        /// <summary>
         /// 实现数量减一
         /// </summary>
         /// <param name="id"></param>

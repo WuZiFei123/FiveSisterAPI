@@ -10,6 +10,7 @@ namespace BLL
     public class OrderInfoBLL : IBLLOrderInfo
     {
         OrderInfoDAL dal = new OrderInfoDAL();
+
         /// <summary>
         /// 查询所有订单
         /// </summary>
@@ -28,6 +29,16 @@ namespace BLL
         public int UpdateOrderInfoBuy(int OrderId, int State)
         {
             return dal.UpdateOrderInfoBuy(OrderId,State);
+        }
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+
+        public int AddOrderInfo(OrderInfo order)
+        {
+            return dal.AddOrderInfo(order);
         }
     }
 }

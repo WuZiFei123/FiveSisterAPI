@@ -38,5 +38,16 @@ namespace FiveSister.Controllers
         {
             return BLLOrderInfo.UpdateOrderInfoBuy(OrderId, State);
         }
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [RouteAttribute("api/[controller]/AddOrderInfo")]
+        public  int AddOrderInfo([FromForm] OrderInfo order)
+        {
+            return BLLOrderInfo.AddOrderInfo(order);
+        }
     }
 }

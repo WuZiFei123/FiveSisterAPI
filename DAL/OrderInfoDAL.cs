@@ -29,5 +29,15 @@ namespace DAL
             string sql = $"update OrderInfo set OrderInfoState ={State} where OrderInfoId = {OrderId}";
             return DapperHelper.Cud(sql);
         }
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public int AddOrderInfo(OrderInfo order)
+        {
+            string sql = $"insert into OrderInfo values({order.GoodsLookIdOut},{order.UserInfoIdOut},'{order.OrderInfoSumPrice}',{order.OrderInfoNumber},1)";
+            return DapperHelper.Cud(sql);
+        }
     }
 }
