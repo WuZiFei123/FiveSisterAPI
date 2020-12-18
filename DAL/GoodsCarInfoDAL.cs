@@ -62,7 +62,7 @@ namespace DAL
         /// <returns></returns>
         public int AddGoodsCarInfos(GoodsCarInfo goodsCar)
         {
-            string sql = $"insert into GoodsCarInfo values({goodsCar.GoodsInfoIdOut},{goodsCar.UserInfoIdOut},{goodsCar.GoodsNumber})";
+            string sql = $"insert into GoodsCarInfo values({goodsCar.GoodsLookIdOut},{goodsCar.UserInfoIdOut},{goodsCar.GoodsNumber})";
             return DapperHelper.Cud(sql);
         }
     }

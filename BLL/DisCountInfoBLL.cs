@@ -29,5 +29,9 @@ namespace BLL
             return dal.GetDisCountInfos(ss);
         }
 
+        public List<DisCountInfo> GetDisCountInfos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

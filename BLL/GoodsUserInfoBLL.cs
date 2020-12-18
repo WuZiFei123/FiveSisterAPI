@@ -85,5 +85,10 @@ namespace BLL
         {
             return dal.ExecTran_Pay(UserId,ShopUserId,Price);
         }
+
+        public List<UserInfo> GetUserInfos(string name, string pass)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
