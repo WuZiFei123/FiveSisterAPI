@@ -14,5 +14,6 @@ namespace IBLL
         List<GoodsLook> GetGoodsLooksColor(int id);
         List<GoodsLook> GetGoodsLooksSize(int id);
         List<GoodsLook> GetGoodsLooksKC(int id, string color, string size);
+        List<GoodsDescImg> GetGoodsImgDesc(int GoodsId);
     }
 }

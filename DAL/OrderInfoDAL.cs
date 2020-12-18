@@ -36,8 +36,9 @@ namespace DAL
         /// <returns></returns>
         public int AddOrderInfo(OrderInfo order)
         {
-            string sql = $"insert into OrderInfo values({order.GoodsLookIdOut},{order.UserInfoIdOut},'{order.OrderInfoSumPrice}',{order.OrderInfoNumber},1)";
-            return DapperHelper.Cud(sql);
+            string sql = $"insert into OrderInfo values({order.GoodsLookIdOut},{order.UserInfoIdOut},'{order.OrderInfoSumPrice}',{order.OrderInfoNumber},1);select @@identity as NewId";
+            var list = DapperHelper.GetList<OrderInfo>(sql);
+            return list[0].NewId;
         }
     }
 }

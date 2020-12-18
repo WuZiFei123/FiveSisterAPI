@@ -14,5 +14,8 @@ namespace IBLL
         /// <returns></returns>
         DisCountInfo GetDisCountInfos(int ss);
         int AddDidAndUser(DisCountAndUser d);
+        List<DisCountInfo> GetDisCountInfosById(int UserId);
+        List<DisCountInfo> GetEndDisCountInfosById(int UserId);
+        int DeleteDisCount(int DisAndUserId);
     }
 }

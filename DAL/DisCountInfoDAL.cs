@@ -15,7 +15,39 @@ namespace DAL
         /// <returns></returns>
         public int AddDidAndUser(DisCountAndUser d)
         {
-            string sql = $"insert into DisCountAndUser values({d.UserIdOut},{d.DisCountId})";
+            d.StartTime = DateTime.Now;
+            d.EndTime = d.StartTime.AddDays(3);
+            string sql = $"insert into DisCountAndUser values({d.UserIdOut},{d.DisCountId},'{d.StartTime}','{d.EndTime}')";
+            return DapperHelper.Cud(sql);
+        }
+        /// <summary>
+        /// 获取该用户的所有优惠券
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public List<DisCountInfo> GetDisCountInfosById(int UserId)
+        {
+            string sql = $"select c.DisCountInfoPrice,a.StartTime,a.EndTime from DisCountAndUser a join UserInfo b on a.UserIdOut = b.UserInfoId  join DisCountInfo c on a.DisCountId = c.DisCountInfoId where b.UserInfoId ={UserId}";
+            return DapperHelper.GetList<DisCountInfo>(sql);
+        }
+        /// <summary>
+        /// 获取该用户的失效的优惠券
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public List<DisCountInfo> GetEndDisCountInfosById(int UserId)
+        {
+            string sql = $"select c.DisCountInfoPrice,a.StartTime,a.EndTime,a.DisCountAndUserId from DisCountAndUser a  join UserInfo b on a.UserIdOut = b.UserInfoId  join DisCountInfo c on a.DisCountId = c.DisCountInfoId where b.UserInfoId = 2 and a.EndTime <= '{DateTime.Now}'";
+            return DapperHelper.GetList<DisCountInfo>(sql);
+        }
+        /// <summary>
+        /// 删除过期优惠券
+        /// </summary>
+        /// <param name="DisAndUserId"></param>
+        /// <returns></returns>
+        public int DeleteDisCount(int DisAndUserId) 
+        {
+            string sql = $"delete from DisCountAndUser where DisCountAndUserId = {DisAndUserId}";
             return DapperHelper.Cud(sql);
         }
         /// <summary>

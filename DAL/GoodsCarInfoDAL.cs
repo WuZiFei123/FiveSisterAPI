@@ -62,8 +62,27 @@ namespace DAL
         /// <returns></returns>
         public int AddGoodsCarInfos(GoodsCarInfo goodsCar)
         {
-            string sql = $"insert into GoodsCarInfo values({goodsCar.GoodsInfoIdOut},{goodsCar.UserInfoIdOut},{goodsCar.GoodsNumber})";
+            string sql = $"insert into GoodsCarInfo values({goodsCar.GoodsLookIdOut},{goodsCar.UserInfoIdOut},{goodsCar.GoodsNumber})";
             return DapperHelper.Cud(sql);
+        }
+        /// <summary>
+        /// 获取选中的总价格
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public TempCar GetGoodsCarPrice(string ids,int UserId)
+        {
+            TempCar t = new TempCar();
+            string sql = $"select a.GoodsNumber*d.GoodsInfoPrice as SumPrice,a.GoodsNumber  from GoodsCarInfo a join GoodsLook b on a.GoodsLookIdOut = b.GoodsLookId  join UserInfo c on a.UserInfoIdOut = c.UserInfoId join GoodsInfo d on b.GoodsIdOut = d.GoodsInfoId where c.UserInfoId = {UserId} and a.GoodsCarInfoId in({ids})";
+            var list = DapperHelper.GetList<GoodsCarInfo>(sql);
+            foreach (var item in list)
+            {
+                t.SumPrice += item.SumPrice;
+                t.SumCount += item.GoodsNumber;
+
+            }
+            return t;
         }
     }
 }

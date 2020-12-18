@@ -41,5 +41,12 @@ namespace IBLL
         /// <param name="goodsCar"></param>
         /// <returns></returns>
         int AddGoodsCarInfos(GoodsCarInfo goodsCar);
+        /// <summary>
+        /// 获取选中总价格
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        TempCar GetGoodsCarPrice(string ids, int UserId);
     }
 }

@@ -38,5 +38,49 @@ namespace FiveSister.Controllers
         {
             return BLLDisCount.AddDidAndUser(d);
         }
+        /// <summary>
+        /// 删除用户优惠券  
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/DeleteDisCount")]
+        public int DeleteDisCount(int DisAndUserId)
+        {
+            return BLLDisCount.DeleteDisCount(DisAndUserId);
+        }
+        /// <summary>
+        /// 获取该用户的所有优惠券
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetDisCountInfosById")]
+        public List<DisCountInfo> GetDisCountInfosById(int UserId)
+        {
+            var list = BLLDisCount.GetDisCountInfosById(UserId);
+            foreach (var item in list)
+            {
+                item.ShowStartTime = item.StartTime.ToString("yyyy-MM-dd");
+                item.ShowEndTime = item.EndTime.ToString("yyyy-MM-dd");
+            }
+            return list;
+        }
+        /// <summary>
+        /// 获取该用户的所有过期优惠券
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetEndDisCountInfosById")]
+        public List<DisCountInfo> GetEndDisCountInfosById(int UserId)
+        {
+            var list = BLLDisCount.GetEndDisCountInfosById(UserId);
+            foreach (var item in list)
+            {
+                item.ShowStartTime = item.StartTime.ToString("yyyy-MM-dd");
+                item.ShowEndTime = item.EndTime.ToString("yyyy-MM-dd");
+            }
+            return list;
+        }
     }
 }

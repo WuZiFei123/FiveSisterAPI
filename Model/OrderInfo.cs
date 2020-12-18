@@ -57,6 +57,7 @@ namespace Model
         /// </summary>
         public int GoodsLookId { get; set; }
         public int GoodsInfoId { get; set; }
-        
+        public int NewId { get; set; }
+
     }
 }

@@ -45,7 +45,6 @@ namespace BLL
         {
             return dal.AddGoodsCarInfos(goodsCar);
         }
-
         /// <summary>
         /// 实现数量减一
         /// </summary>
@@ -64,6 +63,16 @@ namespace BLL
         public int UpdateAndGo(int id)
         {
             return dal.UpdateAndGo(id);
+        }
+        /// <summary>
+        /// 获取选中的总价格
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public TempCar GetGoodsCarPrice(string ids, int UserId)
+        {
+            return dal.GetGoodsCarPrice(ids,UserId);
         }
     }
 }

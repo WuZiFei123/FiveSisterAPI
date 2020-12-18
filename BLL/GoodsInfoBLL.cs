@@ -77,6 +77,10 @@ namespace BLL
         {
             return dal.GetGoodsLooksKC(id,color,size);
         }
-        
+
+        public List<GoodsDescImg> GetGoodsImgDesc(int GoodsId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -63,5 +63,6 @@ namespace Model
         /// 商品名称
         /// </summary>
         public string GoodsInfoName { get; set; }
+        public int SumPrice { get; set; }
     }
 }
