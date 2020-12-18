@@ -37,9 +37,9 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpPost]
         [RouteAttribute("api/[controller]/AddressInfoAdd")]
-        public int AddressInfoAdd(AddressInfo addressInfo)
+        public int AddressInfoAdd([FromForm] AddressInfo addressInfo)
         {
-            return ibll.AddressInfoAdd(addressInfo);       
+            return ibll.AddressInfoAdd(addressInfo);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpPost]
         [RouteAttribute("api/[controller]/AddressInfoModify")]
-        public int AddressInfoModify(AddressInfo addressInfo)
+        public int AddressInfoModify([FromForm] AddressInfo addressInfo)
         {
             return ibll.AddressInfoModify(addressInfo);
         }

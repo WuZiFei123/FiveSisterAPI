@@ -21,9 +21,16 @@ namespace FiveSister.Controllers
         [HttpGet]
         [RouteAttribute("api/[controller]/GetUserInfos")]
         public UserInfo GetUserInfos(string name, string pass)
+        
         {
             var s =  _goodsUserInfobll.GetUserInfos(name,pass);
-            return s[0];
+            return s[0];           
+        }
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetUserInfos")]
+        public List<UserInfo> GetUserInfos(UserInfo userInfo)
+        {
+            return _goodsUserInfobll.GetUserInfos(userInfo);
         }
         [HttpPost]
         [RouteAttribute("api/[controller]/GetZhu")]

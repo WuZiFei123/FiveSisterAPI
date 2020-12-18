@@ -14,16 +14,20 @@ namespace DAL
         /// <param name="name"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public  List<UserInfo> GetUserInfos(string name, string pass)
+        public  List<UserInfo> GetUserInfos(UserInfo userInfo)
         {  
             string sql = "select * from UserInfo Where 1=1";
-            if (name!= "")
+            if (!string.IsNullOrEmpty(userInfo.UserInfoName))
             {
-                sql += $" and UserInfoName='{name}'";
+                sql += $" and UserInfoName='{userInfo.UserInfoName}'";
             }
-            if (pass!= "")
+            if (!string.IsNullOrEmpty(userInfo.UserInfoPass))
             {
-                sql += $" and UserInfoPass='{pass}'";
+                sql += $" and UserInfoPass='{userInfo.UserInfoPass}'";
+            }
+            if (userInfo.UserInfoId!=0)
+            {
+                sql += $" and UserInfoId={userInfo.UserInfoId}";
             }
             return DapperHelper.GetList<UserInfo>(sql);
         }

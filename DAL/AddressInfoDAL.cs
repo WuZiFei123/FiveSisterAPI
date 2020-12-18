@@ -23,7 +23,7 @@ namespace DAL
         /// <returns></returns>
         public int AddAddressInfo(AddressInfo addressInfo)
         {
-            string sql = $"insert into AddressInfo values('{addressInfo.AddressInfoPeople}','{addressInfo.AddressInfoPhone}',{addressInfo.UserInfoIdOut},{addressInfo.PosstionInfoIdOut}，'{addressInfo.AddressInfoName}',{addressInfo.AddressInfoState})";
+            string sql = $"insert into AddressInfo values('{addressInfo.AddressInfoPeople}','{addressInfo.AddressInfoPhone}',{addressInfo.UserInfoIdOut},{addressInfo.PosstionInfoPIdOut},{addressInfo.PosstionInfoCIdOut},{addressInfo.PosstionInfoDIdOut},'{addressInfo.AddressInfoName}',{addressInfo.AddressInfoState})";
             return DapperHelper.Cud(sql);
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace DAL
         /// <returns></returns>
         public int ModifyAddressInfo(AddressInfo addressInfo)
         {
-            string sql = $"update AddressInfo set AddressInfoPeople='{addressInfo.AddressInfoPeople}',AddressInfoPhone='{addressInfo.AddressInfoPhone}',UserInfoIdOut={addressInfo.UserInfoIdOut},PosstionInfoIdOut={addressInfo.PosstionInfoIdOut},AddressInfoName='{addressInfo.AddressInfoName}',AddressInfoState={addressInfo.AddressInfoState} where AddressInfoId = {addressInfo.AddressInfoId}";
+            string sql = $"update AddressInfo set AddressInfoPeople='{addressInfo.AddressInfoPeople}',AddressInfoPhone='{addressInfo.AddressInfoPhone}',PosstionInfoPIdOut={addressInfo.PosstionInfoPIdOut},PosstionInfoCIdOut={addressInfo.PosstionInfoCIdOut},PosstionInfoDIdOut={addressInfo.PosstionInfoDIdOut},AddressInfoName='{addressInfo.AddressInfoName}',AddressInfoState={addressInfo.AddressInfoState} where AddressInfoId = {addressInfo.AddressInfoId}";
             return DapperHelper.Cud(sql);
         }
         /// <summary>

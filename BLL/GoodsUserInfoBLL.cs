@@ -18,9 +18,9 @@ namespace BLL
         /// <param name="pass"></param>
         /// <returns></returns>
 
-        public List<UserInfo> GetUserInfos(string name, string pass)
+        public List<UserInfo> GetUserInfos(UserInfo userInfo)
         {
-            return dal.GetUserInfos(name, pass);
+            return dal.GetUserInfos(userInfo);
         }
         /// <summary>
         /// 根据Id获取用户
@@ -84,6 +84,11 @@ namespace BLL
         public int ExecTran_Pay(int UserId, int ShopUserId, int Price)
         {
             return dal.ExecTran_Pay(UserId,ShopUserId,Price);
+        }
+
+        public List<UserInfo> GetUserInfos(string name, string pass)
+        {
+            throw new NotImplementedException();
         }
     }
 }

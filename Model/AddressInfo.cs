@@ -30,7 +30,9 @@ namespace Model
         /// <summary>
         /// 地址表外键
         /// </summary>
-        public int PosstionInfoIdOut { get; set; }
+        public int PosstionInfoPIdOut { get; set; }
+        public int PosstionInfoCIdOut { get; set; }
+        public int PosstionInfoDIdOut { get; set; }
         /// <summary>
         /// 收货地址详细地址
         /// </summary>
