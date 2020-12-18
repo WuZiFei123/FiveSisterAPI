@@ -16,7 +16,7 @@ namespace IBLL
         /// 连接查询所有购物车
         /// </summary>
         /// <returns></returns>
-        List<ShopCarAndGoods> GetShopCarAndGoods();
+        List<GoodsCarInfo> GetShopCarAndGoods(int UserId);
         /// <summary>
         /// 删除购物车数据
         /// </summary>
@@ -35,5 +35,11 @@ namespace IBLL
         /// <param name="id"></param>
         /// <returns></returns>
         int UpdateAndBack(int id);
+        /// <summary>
+        /// 添加购物车商品
+        /// </summary>
+        /// <param name="goodsCar"></param>
+        /// <returns></returns>
+        int AddGoodsCarInfos(GoodsCarInfo goodsCar);
     }
 }

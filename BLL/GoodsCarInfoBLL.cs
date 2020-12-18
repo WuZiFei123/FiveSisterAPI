@@ -32,10 +32,20 @@ namespace BLL
         /// 联查所有购物车
         /// </summary>
         /// <returns></returns>
-        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        public List<GoodsCarInfo> GetShopCarAndGoods(int UserId)
         {
-            return dal.GetShopCarAndGoods();
+            return dal.GetShopCarAndGoods(UserId);
         }
+        /// <summary>
+        /// 购物车添加商品
+        /// </summary>
+        /// <param name="goodsCar"></param>
+        /// <returns></returns>
+        public int AddGoodsCarInfos(GoodsCarInfo goodsCar)
+        {
+            return dal.AddGoodsCarInfos(goodsCar);
+        }
+
         /// <summary>
         /// 实现数量减一
         /// </summary>

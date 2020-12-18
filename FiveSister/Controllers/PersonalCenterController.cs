@@ -26,7 +26,8 @@ namespace FiveSister.Controllers
         [RouteAttribute("api/[controller]/GetAddressInfos")]
         public List<AddressInfo> GetAddressInfos(int userInfoId=0)
         {
-            return ibll.GetAddressInfos(userInfoId);
+            var s =  ibll.GetAddressInfos(userInfoId);
+            return s;
         }
 
         /// <summary>

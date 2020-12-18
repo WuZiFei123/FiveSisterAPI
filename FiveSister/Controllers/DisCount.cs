@@ -24,10 +24,19 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpGet]
         [RouteAttribute("api/[controller]/GetClothesTypes")]
-        public List<DisCountInfo> GetClothesTypes()
+        public DisCountInfo GetClothesTypes(int ss)
         {
-            return BLLDisCount.GetDisCountInfos();
+            return BLLDisCount.GetDisCountInfos(ss);
         }
-
+        /// <summary>
+        /// 添加用户优惠券  
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [RouteAttribute("api/[controller]/AddDidAndUser")]
+        public int AddDidAndUser([FromForm] DisCountAndUser d)
+        {
+            return BLLDisCount.AddDidAndUser(d);
+        }
     }
 }

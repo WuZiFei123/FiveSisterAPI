@@ -10,6 +10,7 @@ namespace BLL
     public class GoodsInfoBLL : IBLLGoodsInfo
     {
         GoodsInfoDAL dal = new GoodsInfoDAL();
+
         /// <summary>
         /// 分页显示商品
         /// </summary>
@@ -31,10 +32,51 @@ namespace BLL
         {
             return dal.GetGoodsInfoTop();
         }
-
+        /// <summary>
+        /// 添加商品
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns></returns>
         public int GoodsAdd(GoodsInfo g)
         {
             return dal.GoodsAdd(g);
         }
+        /// <summary>
+        /// 查询商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsInfo> GetGoodsInfos(int id)
+        {
+            return dal.GetGoodsInfos(id);
+        }
+        /// <summary>
+        /// 查询商品参数颜色
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsLook> GetGoodsLooksColor(int id)
+        {
+            return dal.GetGoodsLooksColor(id);
+        }
+        /// <summary>
+        /// 查询商品参数尺码
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsLook> GetGoodsLooksSize(int id)
+        {
+            return dal.GetGoodsLooksSize(id);
+        }
+        /// <summary>
+        /// 查询商品库存
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsLook> GetGoodsLooksKC(int id, string color, string size)
+        {
+            return dal.GetGoodsLooksKC(id,color,size);
+        }
+        
     }
 }

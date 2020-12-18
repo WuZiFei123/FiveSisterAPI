@@ -17,5 +17,9 @@ namespace Model
         /// 优惠价格
         /// </summary>
         public int DisCountInfoPrice { get; set; }
+        /// <summary>
+        /// 优惠券级别
+        /// </summary>
+        public int DisCountInfoJb { get; set; }
     }
 }

@@ -55,5 +55,45 @@ namespace DAL
             string sql = $"insert into GoodsInfo values('{g.GoodsInfoName}','{g.GoodsInfoImage}','{g.GoodsInfoPrice}','{g.GoodsInfoCount}','{g.GoodsInfoState}','{g.GoodsInfoPlace}','{g.GoodsInfoColor}','{g.GoodsInfoSize}','{g.ShopIdOut}','{g.GoodsTypes}','{g.GoodsInfoDesc}')";
             return DapperHelper.Cud(sql);
         }
+        /// <summary>
+        /// 查询商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsInfo> GetGoodsInfos(int id)
+        {
+            string sql = $"select * from GoodsInfo where GoodsInfoId={id}";
+            return DapperHelper.GetList<GoodsInfo>(sql);
+        }
+        /// <summary>
+        /// 商品详情颜色
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsLook> GetGoodsLooksColor(int id)
+        {
+            string sql = $"select distinct(GoodsColor) from GoodsLook where GoodsIdOut={id}";
+            return DapperHelper.GetList<GoodsLook>(sql);
+        }
+        /// <summary>
+        /// 商品详情尺码
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsLook> GetGoodsLooksSize(int id)
+        {
+            string sql = $"select distinct(GoodsSize) from GoodsLook where GoodsIdOut={id}";
+            return DapperHelper.GetList<GoodsLook>(sql);
+        }
+        /// <summary>
+        /// 商品详情库存
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<GoodsLook> GetGoodsLooksKC(int id,string color,string size)
+        {
+            string sql = $"select * from GoodsLook where GoodsIdOut={id} and GoodsColor='{color}' and GoodsSize='{size}'";
+            return DapperHelper.GetList<GoodsLook>(sql);
+        }
     }
 }

@@ -57,5 +57,60 @@ namespace DAL
             string sql =$"update UserInfo set UserInfoPass='{UserInfoPass}' where  UserInfoId='{UserInfoId}'";
             return DapperHelper.Cud(sql);
         }
+        /// <summary>
+        /// 根据Id获取用户
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public UserInfo GetUserInfoById(int Id)
+        {
+            string sql = $"select * from UserInfo where UserInfoId  = {Id}";
+            var list = DapperHelper.GetList<UserInfo>(sql);
+            return list[0];
+        }
+        /// <summary>
+        /// 付款扣钱
+        /// </summary>
+        /// <param name="Money"></param>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public int PayMoneyUser(int Money,int UserId)
+        {
+            string sql = $"update UserInfo set UserInfoMoney =UserInfoMoney - {Money} where UserInfoId ={UserId}";
+            return DapperHelper.Cud(sql);
+        }
+        /// <summary>
+        /// 商家收钱
+        /// </summary>
+        /// <param name="Money"></param>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public int ReMoneyShopUser(int Money, int UserId)
+        {
+            string sql = $"update UserInfo set UserInfoMoney =UserInfoMoney + {Money} where UserInfoId ={UserId}";
+            return DapperHelper.Cud(sql);
+        }
+        /// <summary>
+        /// 获取买家的余额
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public int GetUserMoney(int UserId)
+        {
+            string sql = $"select * from UserInfo  where UserInfoId={UserId}";
+            var list = DapperHelper.GetList<UserInfo>(sql);
+            return list[0].UserInfoMoney;
+        }
+        /// <summary>
+        /// 事务支付
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <param name="ShopUserId"></param>
+        /// <param name="Price"></param>
+        /// <returns></returns>
+        public int ExecTran_Pay(int UserId,int ShopUserId,int Price)
+        {
+            return DBHelper.ExecTran_Pay(UserId,ShopUserId,Price);
+        }
     }
 }

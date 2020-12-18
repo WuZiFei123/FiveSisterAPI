@@ -21,10 +21,10 @@ namespace DAL
         /// 联查所有购物车
         /// </summary>
         /// <returns></returns>
-        public List<ShopCarAndGoods> GetShopCarAndGoods()
+        public List<GoodsCarInfo> GetShopCarAndGoods(int UserId)
         {
-            string sql = $"select * from GoodsCarInfo a join GoodsInfo b   on a.GoodsInfoIdOut = b.GoodsInfoId join UserInfo c on a.UserInfoIdOut = c.UserInfoId";
-            return DapperHelper.GetList<ShopCarAndGoods>(sql);
+            string sql = $" select d.GoodsInfoId,a.GoodsCarInfoId,c.GoodsSize,c.GoodsColor,d.GoodsInfoName,c.GoodsImg,d.GoodsInfoDesc,d.GoodsInfoPrice,a.GoodsNumber,b.UserInfoId,b.UserInfoName,c.GoodsLookId from GoodsCarInfo a join UserInfo b on a.UserInfoIdOut = b.UserInfoId join GoodsLook c on a.GoodsLookIdOut = c.GoodsLookId join GoodsInfo d on c.GoodsIdOut = d.GoodsInfoId where b.UserInfoId = {UserId}";
+            return DapperHelper.GetList<GoodsCarInfo>(sql);
         }
         /// <summary>
         /// 批量  单删购物车数据
@@ -54,6 +54,15 @@ namespace DAL
         public int UpdateAndBack(int id)
         {
             string sql = $"update GoodsCarInfo set GoodsNumber=GoodsNumber-1 where GoodsCarInfo.GoodsCarInfoId={id}";
+            return DapperHelper.Cud(sql);
+        }
+        /// <summary>
+        /// 商品添加购物车
+        /// </summary>
+        /// <returns></returns>
+        public int AddGoodsCarInfos(GoodsCarInfo goodsCar)
+        {
+            string sql = $"insert into GoodsCarInfo values({goodsCar.GoodsInfoIdOut},{goodsCar.UserInfoIdOut},{goodsCar.GoodsNumber})";
             return DapperHelper.Cud(sql);
         }
     }

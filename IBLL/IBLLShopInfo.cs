@@ -8,5 +8,6 @@ namespace IBLL
     public interface IBLLShopInfo
     {
         List<ShopInfo> GetShopInfos();
+        int GetShopUserId(int ShopUserId);
     }
 }
