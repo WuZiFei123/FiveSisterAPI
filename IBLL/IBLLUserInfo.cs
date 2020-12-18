@@ -14,6 +14,13 @@ namespace IBLL
         /// <param name="name"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
+        List<UserInfo> GetUserInfos(string name, string pass);
+        /// <summary>
+        /// 登录接口
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
         List<UserInfo> GetUserInfos(UserInfo userInfo);
         /// <summary>
         /// 注册接口
