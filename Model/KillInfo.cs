@@ -35,5 +35,6 @@ namespace Model
         /// 商品单价
         /// </summary>
         public string GoodsInfoPrice { get; set; }
+        public int GoodsIdOut { get; set; }
     }
 }

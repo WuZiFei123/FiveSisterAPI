@@ -20,6 +20,15 @@ namespace BLL
             return dal.AddAddressInfo(addressInfo);
         }
         /// <summary>
+        /// 根据主键查询地址
+        /// </summary>
+        /// <param name="AddressId"></param>
+        /// <returns></returns>
+        public List<AddressInfo> GetAddressInfosByAddressId(int AddressId)
+        {
+            return dal.GetAddressInfosByAddressId(AddressId);
+        }
+        /// <summary>
         /// 修改收货地址
         /// </summary>
         /// <param name="addressInfo"></param>

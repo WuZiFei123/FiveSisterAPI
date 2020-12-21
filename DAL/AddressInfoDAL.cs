@@ -17,6 +17,16 @@ namespace DAL
             return DapperHelper.GetList<AddressInfo>(sql);
         }
         /// <summary>
+        /// 根据主键查询地址
+        /// </summary>
+        /// <param name="AddressId"></param>
+        /// <returns></returns>
+        public List<AddressInfo> GetAddressInfosByAddressId(int AddressId)
+        {
+            string sql = $"select * from AddressInfo where AddressInfoId = {AddressId}";
+            return DapperHelper.GetList<AddressInfo>(sql);
+        }
+        /// <summary>
         /// 添加收货地址
         /// </summary>
         /// <param name="addressInfo"></param>

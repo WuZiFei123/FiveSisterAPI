@@ -26,5 +26,8 @@ namespace IBLL
         /// <param name="order"></param>
         /// <returns></returns>
         int AddOrderInfo(OrderInfo order);
+        List<OrderInfo> GetPayMoneyOrderInfo(int OrderId);
+        int AddOrderDesc(OrderDesc o);
+        List<CompanyInfo> GetCompanyInfos(int OrderId);
     }
 }

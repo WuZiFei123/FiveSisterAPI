@@ -49,5 +49,39 @@ namespace FiveSister.Controllers
         {
             return BLLOrderInfo.AddOrderInfo(order);
         }
+        /// <summary>
+        /// 根据订单主键获取订单支付
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetPayMoneyOrderInfo")]
+        public List<OrderInfo> GetPayMoneyOrderInfo(int OrderId)
+        {
+            var s = BLLOrderInfo.GetPayMoneyOrderInfo(OrderId);
+            return s;
+        }
+        /// <summary>
+        /// 添加订单详情
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [RouteAttribute("api/[controller]/AddOrderDesc")]
+        public int AddOrderDesc([FromForm] OrderDesc o)
+        {
+            return BLLOrderInfo.AddOrderDesc(o);
+        }
+        /// <summary>
+        /// 获取物流信息
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetCompanyInfos")]
+        public List<CompanyInfo> GetCompanyInfos(int OrderId=0)
+        {
+            return BLLOrderInfo.GetCompanyInfos(OrderId);
+        }
     }
 }

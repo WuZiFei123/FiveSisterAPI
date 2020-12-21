@@ -147,8 +147,17 @@ namespace FiveSister.Controllers
             var s =  bLLGoodsInfo.GetGoodsLooksKC(id,color,size);
             return s;
         }
-        
-
-
+        /// <summary>
+        /// 查询商品详情图片
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsImgDesc")]
+        public List<GoodsDescImg> GetGoodsImgDesc(int GoodsId)
+        {
+            var s = bLLGoodsInfo.GetGoodsImgDesc(GoodsId);
+            return s;
+        }
     }
 }

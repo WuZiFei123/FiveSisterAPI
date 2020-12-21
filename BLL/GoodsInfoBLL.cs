@@ -77,10 +77,14 @@ namespace BLL
         {
             return dal.GetGoodsLooksKC(id,color,size);
         }
-
+        /// <summary>
+        /// 商品详情图片
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public List<GoodsDescImg> GetGoodsImgDesc(int GoodsId)
         {
-            throw new NotImplementedException();
+            return dal.GetGoodsImgDesc(GoodsId);
         }
     }
 }

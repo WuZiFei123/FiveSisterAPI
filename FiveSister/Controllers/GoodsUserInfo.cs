@@ -20,8 +20,7 @@ namespace FiveSister.Controllers
         } 
         [HttpGet]
         [RouteAttribute("api/[controller]/GetUserInfos")]
-        public UserInfo GetUserInfos(string name, string pass)
-        
+        public UserInfo GetUserInfos(string name="1", string pass="1")
         {
             var s =  _goodsUserInfobll.GetUserInfos(name,pass);
             return s[0];           
@@ -99,6 +98,7 @@ namespace FiveSister.Controllers
         [HttpGet]
         [RouteAttribute("api/[controller]/ExecTran_Pay")]
         public int ExecTran_Pay(int UserId,int ShopUserId,int Price)
+        
         {
             var s = _goodsUserInfobll.ExecTran_Pay(UserId,ShopUserId,Price);
             return s;

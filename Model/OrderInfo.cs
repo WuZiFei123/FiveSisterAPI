@@ -58,6 +58,10 @@ namespace Model
         public int GoodsLookId { get; set; }
         public int GoodsInfoId { get; set; }
         public int NewId { get; set; }
-
+        public int shangjia { get; set; }
+        public int GoodsInfoPrice { get; set; }
+        public string AddressInfoName { get; set; }
+        public string UserInfoName { get; set; }
+        public string UserInfoPhone { get; set; }
     }
 }

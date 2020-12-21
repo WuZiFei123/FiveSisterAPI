@@ -16,7 +16,7 @@ namespace Model
         /// <summary>
         /// 物流经过地址
         /// </summary>
-        public string CompanyInfoContext { get; set; }
+        public string CompanyInfoContext  { get; set; }
         /// <summary>
         /// 订单外键
         /// </summary>

@@ -10,7 +10,6 @@ namespace Model
         /// 收货地址主键
         /// </summary>
         public int AddressInfoId { get; set; }
-
         /// <summary>
         /// 用户外键
         /// </summary>
@@ -20,13 +19,10 @@ namespace Model
         /// 收货人
         /// </summary>
         public string AddressInfoPeople { get; set; }
-
         /// <summary>
         /// 收货人手机号
         /// </summary>
-        public string AddressInfoPhone { get; set; }
-        
-
+        public string AddressInfoPhone { get; set; }       
         /// <summary>
         /// 地址表外键
         /// </summary>
@@ -42,5 +38,6 @@ namespace Model
         /// 收货地址状态(是否默认地址 1默认，0非默认)
         /// </summary>
         public int AddressInfoState { get; set; }
+
     }
 }

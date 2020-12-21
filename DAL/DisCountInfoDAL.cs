@@ -27,7 +27,8 @@ namespace DAL
         /// <returns></returns>
         public List<DisCountInfo> GetDisCountInfosById(int UserId)
         {
-            string sql = $"select c.DisCountInfoPrice,a.StartTime,a.EndTime from DisCountAndUser a join UserInfo b on a.UserIdOut = b.UserInfoId  join DisCountInfo c on a.DisCountId = c.DisCountInfoId where b.UserInfoId ={UserId}";
+            var d =DateTime.Now;
+            string sql = $"select c.DisCountInfoPrice,a.StartTime,a.EndTime from DisCountAndUser a join UserInfo b on a.UserIdOut = b.UserInfoId  join DisCountInfo c on a.DisCountId = c.DisCountInfoId where b.UserInfoId ={UserId} and a.EndTime >='{d}'";
             return DapperHelper.GetList<DisCountInfo>(sql);
         }
         /// <summary>

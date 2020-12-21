@@ -40,5 +40,32 @@ namespace BLL
         {
             return dal.AddOrderInfo(order);
         }
+        /// <summary>
+        /// 根据Id查询出订单支付
+        /// </summary>
+        /// <param name="OrderId"></param>
+        /// <returns></returns>
+        public List<OrderInfo> GetPayMoneyOrderInfo(int OrderId)
+        {
+            return dal.GetPayMoneyOrderInfo(OrderId);
+        }
+        /// <summary>
+        /// 添加订单详情
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
+        public int AddOrderDesc(OrderDesc o)
+        {
+            return dal.AddOrderDesc(o);
+        }
+        /// <summary>
+        /// 获取物流信息
+        /// </summary>
+        /// <param name="OrderId"></param>
+        /// <returns></returns>
+        public List<CompanyInfo> GetCompanyInfos(int OrderId)
+        {
+            return dal.GetCompanyInfos(OrderId);
+        }
     }
 }
