@@ -33,6 +33,12 @@ namespace FiveSister
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
             services.AddTransient<IBLLUserInfo, GoodsUserInfoBLL>();
+            services.AddTransient<IBLLGoodsAddInfo, GoodsAddInfoBLL>();
+            services.AddTransient<IBLLAddressInfo, AddressInfoBLL>();
+            services.AddTransient<IBLLOrderInfo, OrderInfoBLL>();
+            services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
+            services.AddTransient<IBLLDisCountInfo, DisCountInfoBLL>();
+            services.AddTransient<IBLLAddressInfo, AddressInfoBLL>();
             services.AddTransient<IBLLAddRemarkInfo, AddRemarkInfoBLL>();
             
             //配置跨域处理，允许所有来源：

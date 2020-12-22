@@ -28,7 +28,7 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpGet]
         [RouteAttribute("api/[controller]/GetGoodsInfosPage")]
-        public GoodsInfo_PageList GetGoodsInfosPage(int PageIndex=1, int PageSize=10, string Name="", string Brand="", string Types="",int Orderby =0,int Price =0)
+        public GoodsInfo_PageList GetGoodsInfosPage(int PageIndex=1, int PageSize=12, string Name="", string Brand="", string Types="",int Orderby =0,int Price =0)
         {
             var s = bLLGoodsInfo.GetGoodsInfosPage(PageIndex,PageSize,Name,Brand,Types);
             if(Orderby==1)
@@ -47,7 +47,7 @@ namespace FiveSister.Controllers
             {
                 s.GoodsInfos = s.GoodsInfos.OrderByDescending(g => g.GoodsInfoPrice).ToList();
             }
-            s.Con = s.GoodsInfos.Count;
+            s.Con = s.GoodsCon;
             return s;
         }
         /// <summary>
@@ -101,6 +101,63 @@ namespace FiveSister.Controllers
         public List<KillInfo> GetKillInfos()
         {
             return bLLKillInfo.GetKillInfos();
+        }
+        /// <summary>
+        /// 查询商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsInfos")]
+        public List<GoodsInfo> GetGoodsInfos(int id=0)
+        {
+            return bLLGoodsInfo.GetGoodsInfos(id);
+        }
+        /// <summary>
+        /// 查询商品详情颜色
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsLooksColor")]
+        public List<GoodsLook> GetGoodsLooksColor(int id)
+        {
+            return bLLGoodsInfo.GetGoodsLooksColor(id);
+        }
+        /// <summary>
+        /// 查询商品详情尺码
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsLooksSize")]
+        public List<GoodsLook> GetGoodsLooksSize(int id)
+        {
+            return bLLGoodsInfo.GetGoodsLooksSize(id);
+        }
+        /// <summary>
+        /// 查询商品库存详情
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsLooksKC")]
+        public List<GoodsLook> GetGoodsLooksKC(int id, string color, string size)
+        {
+            var s =  bLLGoodsInfo.GetGoodsLooksKC(id,color,size);
+            return s;
+        }
+        /// <summary>
+        /// 查询商品详情图片
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetGoodsImgDesc")]
+        public List<GoodsDescImg> GetGoodsImgDesc(int GoodsId)
+        {
+            var s = bLLGoodsInfo.GetGoodsImgDesc(GoodsId);
+            return s;
         }
     }
 }

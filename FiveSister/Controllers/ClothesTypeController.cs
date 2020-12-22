@@ -51,7 +51,6 @@ namespace FiveSister.Controllers
             var s = bLLClothesType.GetClothesTypesByMasterId(TypeId);
             return s[0];
         }
-
         /// <summary>
         /// 联动复选框查询
         /// </summary>

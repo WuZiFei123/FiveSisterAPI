@@ -15,7 +15,6 @@ namespace DAL
         {
             string sql = $"select * from SizeInfo";
             return DapperHelper.GetList<SizeInfo>(sql);
-
         }
     }
 }

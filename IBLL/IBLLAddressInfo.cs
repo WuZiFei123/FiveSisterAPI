@@ -13,7 +13,7 @@ namespace IBLL
         /// <returns></returns>
         List<AddressInfo> GetAddressInfos(int userInfoId);
 
-
+        List<AddressInfo> GetAddressInfosByAddressId(int AddressId);
         /// <summary>
         /// 修改地址
         /// </summary>

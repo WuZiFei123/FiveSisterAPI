@@ -11,6 +11,15 @@ namespace BLL
     {
         GoodsAddInfoDAL dal = new GoodsAddInfoDAL();
         /// <summary>
+        /// 添加收藏
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns></returns>
+        public int AddGoodsClect(GoodsAddInfo g)
+        {
+            return dal.AddGoodsClect(g);
+        }
+        /// <summary>
         /// 所有收藏
         /// </summary>
         /// <param name="UserId"></param>

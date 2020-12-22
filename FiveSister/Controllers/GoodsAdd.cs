@@ -40,5 +40,16 @@ namespace FiveSister.Controllers
         {
             return bLLGoodsAddInfo.UpdateGoodsClect(ClectId);
         }
+        /// <summary>
+        /// 添加收藏
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+        [HttpPost]
+        [RouteAttribute("api/[controller]/AddGoodsClect")]
+        public int AddGoodsClect([FromForm] GoodsAddInfo model)
+        {
+            return bLLGoodsAddInfo.AddGoodsClect(model);
+        }
     }
 }

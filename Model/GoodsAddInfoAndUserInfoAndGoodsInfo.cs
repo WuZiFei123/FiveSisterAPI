@@ -53,14 +53,6 @@ namespace Model
         /// </summary>
         public string GoodsInfoPlace { get; set; }
         /// <summary>
-        /// 商品颜色
-        /// </summary>
-        public string GoodsInfoColor { get; set; }
-        /// <summary>
-        /// 商品规格
-        /// </summary>
-        public string GoodsInfoSize { get; set; }
-        /// <summary>
         /// 所属店铺
         /// </summary>
         public int ShopIdOut { get; set; }

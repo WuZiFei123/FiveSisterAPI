@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using Dapper;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace DAL
 {
@@ -19,7 +20,7 @@ namespace DAL
         /// <returns></returns>
         public static List<T> GetList<T>(string sql)
         {
-             return conn.Query<T>(sql).AsList();
+             return conn.Query<T>(sql).ToList();
         }
         /// <summary>
         /// 查询单个

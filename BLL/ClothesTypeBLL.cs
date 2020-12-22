@@ -42,8 +42,6 @@ namespace BLL
         public List<ClothesType> GetClothesType(int pid)
         {
             return dal.GetClothesType(pid);
-        }
-
-      
+        }     
     }
 }

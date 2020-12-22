@@ -13,7 +13,7 @@ namespace DAL
         /// <returns></returns>
         public List<KillInfo> GetKillInfos()
         {
-            string sql = "select * from KillInfo k join GoodsInfo g on k.GoodsInfoIdOut = g.GoodsInfoId";
+            string sql = "select * from KillInfo k join GoodsLook g on k.GoodsInfoIdOut = g.GoodsLookId  join GoodsInfo c on g.GoodsIdOut = c.GoodsInfoId";
             return DapperHelper.GetList<KillInfo>(sql);
         }
     }

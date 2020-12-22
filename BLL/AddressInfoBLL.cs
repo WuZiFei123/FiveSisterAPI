@@ -20,6 +20,15 @@ namespace BLL
             return dal.AddAddressInfo(addressInfo);
         }
         /// <summary>
+        /// 根据主键查询地址
+        /// </summary>
+        /// <param name="AddressId"></param>
+        /// <returns></returns>
+        public List<AddressInfo> GetAddressInfosByAddressId(int AddressId)
+        {
+            return dal.GetAddressInfosByAddressId(AddressId);
+        }
+        /// <summary>
         /// 修改收货地址
         /// </summary>
         /// <param name="addressInfo"></param>
@@ -36,8 +45,6 @@ namespace BLL
         {
             return dal.GetAddressInfos(userInfoId);
         }
-
-
         /// <summary>
         /// 设置默认
         /// </summary>
@@ -56,7 +63,6 @@ namespace BLL
         {
             return dal.ModifyStateAddressInfo(userInfoId);
         }
-
         /// <summary>
         /// 删除收货地址
         /// </summary>

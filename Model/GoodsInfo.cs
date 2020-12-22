@@ -65,5 +65,7 @@ namespace Model
         /// 商品级别
         /// </summary>
         public int GoodsJb { get; set; }
+
+
     }
 }

@@ -25,8 +25,6 @@ namespace Model
         /// 是否上架
         /// </summary>
         public int KillInfoState { get; set; }
-
-
         /// <summary>
         /// 商品简介
         /// </summary>
@@ -35,5 +33,6 @@ namespace Model
         /// 商品单价
         /// </summary>
         public string GoodsInfoPrice { get; set; }
+        public int GoodsIdOut { get; set; }
     }
 }

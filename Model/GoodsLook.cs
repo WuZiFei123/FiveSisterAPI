@@ -29,5 +29,9 @@ namespace Model
         /// 关联商品
         /// </summary>
         public int GoodsIdOut { get; set; }
+        /// <summary>
+        /// 商品图片
+        /// </summary>
+        public string GoodsImg { get; set; }
     }
 }

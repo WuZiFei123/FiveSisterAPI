@@ -20,7 +20,6 @@ namespace FiveSister.Controllers
             bll = _bll;
             bLLClothesType = _bLLClothesType;
         }
-
         /// <summary>
         /// 获取所有类型
         /// </summary>

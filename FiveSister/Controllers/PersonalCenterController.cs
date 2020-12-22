@@ -26,9 +26,20 @@ namespace FiveSister.Controllers
         [RouteAttribute("api/[controller]/GetAddressInfos")]
         public List<AddressInfo> GetAddressInfos(int userInfoId=0)
         {
-            return ibll.GetAddressInfos(userInfoId);
+            var s = ibll.GetAddressInfos(userInfoId);
+            return s;
         }
-
+        /// <summary>
+        /// 根据主键查询收货地址
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetAddressInfosByAddressId")]
+        public List<AddressInfo> GetAddressInfosByAddressId(int AddressId=0)
+        {
+            var s = ibll.GetAddressInfosByAddressId(AddressId);
+            return s;
+        }
         /// <summary>
         /// 添加收货地址
         /// </summary>
@@ -36,9 +47,9 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpPost]
         [RouteAttribute("api/[controller]/AddressInfoAdd")]
-        public int AddressInfoAdd(AddressInfo addressInfo)
+        public int AddressInfoAdd([FromForm] AddressInfo addressInfo)
         {
-            return ibll.AddressInfoAdd(addressInfo);       
+            return ibll.AddressInfoAdd(addressInfo);
         }
 
         /// <summary>
@@ -48,7 +59,7 @@ namespace FiveSister.Controllers
         /// <returns></returns>
         [HttpPost]
         [RouteAttribute("api/[controller]/AddressInfoModify")]
-        public int AddressInfoModify(AddressInfo addressInfo)
+        public int AddressInfoModify([FromForm] AddressInfo addressInfo)
         {
             return ibll.AddressInfoModify(addressInfo);
         }
@@ -74,6 +85,7 @@ namespace FiveSister.Controllers
         {
             return ibll.ModifyDefaultAddressInfo(addressInfoId);
         }
+
         [HttpGet]
         [RouteAttribute("api/[controller]/DeleteAddressInfo")]
         public int DeleteAddressInfo(int addressInfoId)
