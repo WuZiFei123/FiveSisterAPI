@@ -9,19 +9,6 @@ namespace BLL
    public class GoodsUserInfoBLL:IBLLUserInfo
     {
         UserInfoDAL dal = new UserInfoDAL();
-
-
-        /// <summary>
-        /// 登录
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-
-        public List<UserInfo> GetUserInfos(UserInfo userInfo)
-        {
-            return dal.GetUserInfos(userInfo);
-        }
         /// <summary>
         /// 根据Id获取用户
         /// </summary>
@@ -40,8 +27,13 @@ namespace BLL
         {
             return dal.GetZhu(user);
         }
-
-        public int Update(string UserInfoPass, string UserInfoId)
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="UserInfoPass"></param>
+        /// <param name="UserInfoId"></param>
+        /// <returns></returns>
+        public int Update(string UserInfoPass, int UserInfoId)
         {
             return dal.Update(UserInfoPass, UserInfoId);
         }
@@ -85,10 +77,15 @@ namespace BLL
         {
             return dal.ExecTran_Pay(UserId,ShopUserId,Price);
         }
-
+        //登录
         public List<UserInfo> GetUserInfos(string name, string pass)
         {
-            throw new NotImplementedException();
+            return dal.GetUserInfos(name,pass);
+        }
+        //查询是否存在用户名
+        public List<UserInfo> GetUserNameInfos(string name)
+        {
+            return dal.GetUserNameInfos(name);
         }
     }
 }

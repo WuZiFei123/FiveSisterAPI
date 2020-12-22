@@ -17,19 +17,20 @@ namespace FiveSister.Controllers
         public GoodsUserInfo(IBLLUserInfo bllUserInfo)
         {
             _goodsUserInfobll = bllUserInfo;
-        } 
-        [HttpGet]
-        [RouteAttribute("api/[controller]/GetUserInfos")]
-        public UserInfo GetUserInfos(string name="1", string pass="1")
-        {
-            var s =  _goodsUserInfobll.GetUserInfos(name,pass);
-            return s[0];           
         }
         [HttpGet]
         [RouteAttribute("api/[controller]/GetUserInfos")]
-        public List<UserInfo> GetUserInfos(UserInfo userInfo)
+        public UserInfo GetUserInfos(string name = "", string pass = "")
         {
-            return _goodsUserInfobll.GetUserInfos(userInfo);
+            var s = _goodsUserInfobll.GetUserInfos(name, pass);
+            return s[0];
+        }
+        [HttpGet]
+        [RouteAttribute("api/[controller]/GetUserNameInfos")]
+        public List<UserInfo> GetUserNameInfos(string name = "")
+        {
+            var s = _goodsUserInfobll.GetUserNameInfos(name);
+            return s;
         }
         [HttpPost]
         [RouteAttribute("api/[controller]/GetZhu")]
@@ -37,8 +38,9 @@ namespace FiveSister.Controllers
         { 
             return _goodsUserInfobll.GetZhu(user);
         }
+        [HttpGet]
         [RouteAttribute("api/[controller]/Update")]
-        public int Update([FromForm] string UserInfoPass,string UserInfoId)
+        public int Update(string UserInfoPass,int UserInfoId)
         {
             return _goodsUserInfobll.Update(UserInfoPass,UserInfoId);
         }

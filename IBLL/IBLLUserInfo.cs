@@ -16,19 +16,12 @@ namespace IBLL
         /// <returns></returns>
         List<UserInfo> GetUserInfos(string name, string pass);
         /// <summary>
-        /// 登录接口
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-        List<UserInfo> GetUserInfos(UserInfo userInfo);
-        /// <summary>
         /// 注册接口
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
         int GetZhu(UserInfo user);
-        int Update(string UserInfoPass, string UserInfoId);
+        int Update(string UserInfoPass, int UserInfoId);
         UserInfo GetUserInfoById(int Id);
         /// <summary>
         /// 付款扣钱
@@ -40,5 +33,6 @@ namespace IBLL
         int ReMoneyShopUser(int Money, int UserId);
         int GetUserMoney(int UserId);
         int ExecTran_Pay(int UserId, int ShopUserId, int Price);
+        List<UserInfo> GetUserNameInfos(string name);
     }
 }

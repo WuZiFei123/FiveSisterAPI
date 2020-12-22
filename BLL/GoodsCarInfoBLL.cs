@@ -19,7 +19,6 @@ namespace BLL
         {
             return dal.DeleteCars(ids);
         }
-
         /// <summary>
         /// 查询所有购物车
         /// </summary>
@@ -54,7 +53,6 @@ namespace BLL
         {
             return dal.UpdateAndBack(id);
         }
-
         /// <summary>
         /// 修改数量加一
         /// </summary>

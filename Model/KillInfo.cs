@@ -25,8 +25,6 @@ namespace Model
         /// 是否上架
         /// </summary>
         public int KillInfoState { get; set; }
-
-
         /// <summary>
         /// 商品简介
         /// </summary>

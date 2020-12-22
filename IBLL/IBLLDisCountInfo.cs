@@ -21,6 +21,5 @@ namespace IBLL
         //// 获取所有优惠券
         /// </summary>
         /// <returns></returns>
-        List<DisCountInfo> GetDisCountInfos();
     }
 }

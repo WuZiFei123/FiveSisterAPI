@@ -19,7 +19,6 @@ namespace BLL
         {
             return dal.AddGoodsClect(g);
         }
-
         /// <summary>
         /// 所有收藏
         /// </summary>

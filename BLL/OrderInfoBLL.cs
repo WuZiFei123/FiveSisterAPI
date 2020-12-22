@@ -35,7 +35,6 @@ namespace BLL
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
-
         public int AddOrderInfo(OrderInfo order)
         {
             return dal.AddOrderInfo(order);

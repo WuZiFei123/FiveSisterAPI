@@ -45,8 +45,6 @@ namespace BLL
         {
             return dal.GetAddressInfos(userInfoId);
         }
-
-
         /// <summary>
         /// 设置默认
         /// </summary>
@@ -65,7 +63,6 @@ namespace BLL
         {
             return dal.ModifyStateAddressInfo(userInfoId);
         }
-
         /// <summary>
         /// 删除收货地址
         /// </summary>

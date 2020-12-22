@@ -14,21 +14,14 @@ namespace DAL
         /// <param name="name"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public  List<UserInfo> GetUserInfos(UserInfo userInfo)
-        {  
-            string sql = "select * from UserInfo Where 1=1";
-            if (!string.IsNullOrEmpty(userInfo.UserInfoName))
-            {
-                sql += $" and UserInfoName='{userInfo.UserInfoName}'";
-            }
-            if (!string.IsNullOrEmpty(userInfo.UserInfoPass))
-            {
-                sql += $" and UserInfoPass='{userInfo.UserInfoPass}'";
-            }
-            if (userInfo.UserInfoId!=0)
-            {
-                sql += $" and UserInfoId={userInfo.UserInfoId}";
-            }
+        public  List<UserInfo> GetUserInfos(string name ,string pass)
+        {
+            string sql = $"select * from  UserInfo where UserInfoName = '{name}' and UserInfoPass='{pass}'";
+            return DapperHelper.GetList<UserInfo>(sql);
+        }
+        public List<UserInfo> GetUserNameInfos(string name)
+        {
+            string sql = $"select * from UserInfo where UserInfoName = '{name}'";
             return DapperHelper.GetList<UserInfo>(sql);
         }
         /// <summary>
@@ -38,12 +31,12 @@ namespace DAL
         /// <returns></returns>
         public int GetZhu(UserInfo user)
         {
-            string sql = $"insert into UserInfo values('{user.UserInfoName}','{user.UserInfoPass}','{user.UserInfoSex}','{user.UserInfoLetter}','{user.UserInfoTake}','{user.UserInfoPhone}','{user.UserInfoEmil}','{user.UserInfoHead}')";
+            string sql = $"insert into UserInfo values('{user.UserInfoName}','{user.UserInfoPass}','{user.UserInfoSex}','{user.UserInfoLetter}','{user.UserInfoTake}','{user.UserInfoPhone}','{user.UserInfoEmil}','{user.UserInfoHead}',{user.UserInfoMoney})";
             return DapperHelper.Cud(sql);
         }
-        public int Update(UserInfo u)
+        public int Update(string pass,int userid)
         {
-            string sql = $"update  UserInfo set UserInfoPass='{u.UserInfoPass}'";
+            string sql = $"update  UserInfo set UserInfoPass='{pass}' where UserInfoId={userid}";
             return DapperHelper.Cud(sql); 
         }
         /// <summary>
