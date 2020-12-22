@@ -33,6 +33,7 @@ namespace FiveSister
             services.AddTransient<IBLLShopInfo, ShopInfoBLL>();
             services.AddTransient<IBLLPosstionInfo, PosstionInfoBLL>();
             services.AddTransient<IBLLUserInfo, GoodsUserInfoBLL>();
+            services.AddTransient<IBLLAddRemarkInfo, AddRemarkInfoBLL>();
             
             //配置跨域处理，允许所有来源：
             services.AddCors(options =>

@@ -29,7 +29,6 @@ namespace FiveSister.Controllers
         {
             return bllGoodsCarInfo.GetGoodsCarInfos();
         }
-        
         /// <summary>
         /// 联查购物车数据
         /// </summary>

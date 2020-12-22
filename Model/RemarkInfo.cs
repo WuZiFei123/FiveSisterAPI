@@ -25,5 +25,18 @@ namespace Model
         /// 商品外键
         /// </summary>
         public int GoodsInfoIdOut { get; set; }
+        /// <summary>
+        /// 评价时间
+        /// </summary>
+        public string RemarkTime { get; set; }
+        /// <summary>
+        /// 评价图片
+        /// </summary>
+        public string RemarkImg { get; set; }
+        /// <summary>
+        /// 好评  中评  差评
+        /// </summary>
+        public int RemarkStare { get; set; }
+
     }
 }
